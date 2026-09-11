@@ -255,7 +255,7 @@ body::after {
 
     font-size: 20px;
 
-    cursor: pointer;
+    cursor: default;
 }
 
 
@@ -707,6 +707,10 @@ section {
     object-fit: cover;
 
     transition: transform 0.7s ease;
+}
+
+.work-preview video {
+    background: #050505;
 }
 
 .work-preview:hover img,
@@ -1893,11 +1897,14 @@ footer strong {
 
 
             <video
-                src="TRENDING 1.mp4"
                 autoplay
                 muted
                 loop
-                playsinline>
+                playsinline
+                preload="auto"
+                controlslist="nodownload noplaybackrate"
+                disablepictureinpicture>
+                <source src="./0910%20%281%29.mp4" type="video/mp4">
             </video>
 
 
@@ -1960,11 +1967,14 @@ footer strong {
 
 
             <video
-                src="nilaara.mp4"
                 autoplay
                 muted
                 loop
-                playsinline>
+                playsinline
+                preload="auto"
+                controlslist="nodownload noplaybackrate"
+                disablepictureinpicture>
+                <source src="./website1.mp4" type="video/mp4">
             </video>
 
             <div class="preview-info">
