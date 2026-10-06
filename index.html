@@ -1,1565 +1,1587 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <!-- IMPORTANT FOR MOBILE -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#050505">
+    <meta
+        name="description"
+        content="Creative portfolio — Video Editing, Motion Design and Graphic Design."
+    >
 
-    <title>Z6IH — Portfolio</title>
+    <title>Z6IH. — Creative Portfolio</title>
 
-    <meta name="description"
-          content="Z6IH — Video Editor, Videographer, Graphic Designer and Lightroom Creative.">
 
-    <!-- FONT -->
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
 
-<style>
+    <!-- =====================================================
+         STYLE
+    ====================================================== -->
 
-/* =====================================================
-   RESET
-===================================================== */
+    <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* =====================================================
+           RESET
+        ====================================================== */
 
-html {
-    width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    width: 100%;
-    min-width: 0;
-    overflow-x: hidden;
 
-    font-family: "Inter", sans-serif;
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-    background: #050505;
-    color: #ffffff;
-}
 
-img,
-video {
-    display: block;
-    max-width: 100%;
-}
+        body {
+            background: #090909;
+            color: #f4f4f0;
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+        }
 
-button,
-a {
-    font-family: inherit;
-}
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+        img,
+        video {
+            display: block;
+            max-width: 100%;
+        }
 
-::selection {
-    background: #ff1e2d;
-    color: #ffffff;
-}
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-/* =====================================================
-   GLOBAL BACKGROUND
-===================================================== */
 
-body::before {
-    content: "";
+        button {
+            font-family: inherit;
+        }
 
-    position: fixed;
 
-    width: 400px;
-    height: 400px;
+        :root {
 
-    top: -200px;
-    right: -200px;
+            --black: #090909;
 
-    background: #ff1e2d;
+            --white: #f4f4f0;
 
-    filter: blur(150px);
+            --gray: #777;
 
-    opacity: 0.08;
+            --dark-gray: #151515;
 
-    pointer-events: none;
+            --line: #292929;
 
-    z-index: -1;
-}
+            --orange: #ff5a1f;
 
-body::after {
-    content: "";
+            --max-width: 1450px;
 
-    position: fixed;
+            --side-padding: 5%;
 
-    width: 350px;
-    height: 350px;
+            /* GAP BETWEEN PROJECTS */
 
-    bottom: -200px;
-    left: -180px;
+            --project-gap: 15px;
+        }
 
-    background: #ff1e2d;
 
-    filter: blur(150px);
+        /* =====================================================
+           BACKGROUND
+        ====================================================== */
 
-    opacity: 0.05;
+        body::before {
 
-    pointer-events: none;
+            content: "";
 
-    z-index: -1;
-}
+            position: fixed;
 
+            inset: 0;
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+            z-index: -10;
 
-.navbar {
-    position: fixed;
+            pointer-events: none;
 
-    top: 0;
-    left: 0;
+            opacity: .25;
 
-    width: 100%;
+            background-image:
 
-    height: 72px;
+                linear-gradient(
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                ),
 
-    padding: 0 6%;
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.025) 1px,
+                    transparent 1px
+                );
 
-    display: flex;
+            background-size: 55px 55px;
+        }
 
-    align-items: center;
-    justify-content: space-between;
 
-    background: rgba(5, 5, 5, 0.88);
+        body::after {
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+            content: "";
 
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+            position: fixed;
 
-    z-index: 9999;
-}
+            width: 450px;
 
+            height: 450px;
 
-/* LOGO */
+            border-radius: 50%;
 
-.logo {
-    font-size: 26px;
+            background: var(--orange);
 
-    font-weight: 900;
+            filter: blur(180px);
 
-    letter-spacing: -2px;
+            opacity: .07;
 
-    white-space: nowrap;
-}
+            top: -250px;
 
-.logo span {
-    color: #ff1e2d;
-}
+            right: -150px;
 
+            pointer-events: none;
 
-/* DESKTOP LINKS */
+            z-index: -5;
+        }
 
-.nav-links {
-    display: flex;
 
-    align-items: center;
+        /* =====================================================
+           TOP LINE
+        ====================================================== */
 
-    gap: 32px;
+        .top-line {
 
-    list-style: none;
-}
+            position: fixed;
 
-.nav-links a {
-    color: #888;
+            top: 0;
 
-    font-size: 10px;
+            left: 0;
 
-    font-weight: 800;
+            width: 100%;
 
-    letter-spacing: 1px;
+            height: 2px;
 
-    transition: 0.3s;
-}
+            z-index: 2000;
 
-.nav-links a:hover {
-    color: #ffffff;
-}
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff5a1f,
+                    #ffb000,
+                    #ff2e1f
+                );
+        }
 
 
-/* NAV BUTTON */
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
 
-.nav-button {
-    padding: 10px 18px;
+        header {
 
-    border: 1px solid #ff1e2d;
+            position: fixed;
 
-    border-radius: 30px;
+            top: 2px;
 
-    color: #ffffff;
+            left: 0;
 
-    font-size: 10px;
+            width: 100%;
 
-    font-weight: 800;
+            z-index: 1000;
 
-    transition: 0.3s;
-}
+            background:
+                rgba(9, 9, 9, .88);
 
-.nav-button:hover {
-    background: #ff1e2d;
+            backdrop-filter: blur(18px);
 
-    box-shadow:
-        0 10px 30px rgba(255,30,45,0.25);
-}
+            -webkit-backdrop-filter: blur(18px);
 
+            border-bottom: 1px solid var(--line);
+        }
 
-/* MOBILE MENU BUTTON */
 
-.menu-button {
-    display: none;
+        .nav {
 
-    width: 42px;
-    height: 42px;
+            width: 100%;
 
-    align-items: center;
-    justify-content: center;
+            max-width: var(--max-width);
 
-    background: transparent;
+            height: 74px;
 
-    border: 1px solid #252525;
+            margin: auto;
 
-    border-radius: 8px;
+            padding:
+                0 var(--side-padding);
 
-    color: #ffffff;
+            display: flex;
 
-    font-size: 20px;
+            align-items: center;
 
-    cursor: default;
-}
+            justify-content: space-between;
+        }
 
 
-/* MOBILE MENU */
+        .logo {
 
-.mobile-menu {
-    display: none;
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    position: fixed;
+            font-size: 25px;
 
-    top: 72px;
-    left: 0;
+            font-weight: 700;
 
-    width: 100%;
+            letter-spacing: -2px;
+        }
 
-    padding: 20px;
 
-    background: rgba(5,5,5,0.98);
+        .logo span {
+            color: var(--orange);
+        }
 
-    border-bottom: 1px solid #222;
 
-    z-index: 9998;
-}
+        .nav-menu {
 
-.mobile-menu.active {
-    display: block;
-}
+            display: none;
 
-.mobile-menu a {
-    display: block;
+            list-style: none;
 
-    padding: 16px;
+            align-items: center;
 
-    border-bottom: 1px solid #181818;
+            gap: 35px;
+        }
 
-    color: #aaa;
 
-    font-size: 12px;
+        .nav-menu a {
 
-    font-weight: 700;
-}
+            color: #888;
 
-.mobile-menu a:hover {
-    color: #ff1e2d;
-}
+            font-size: 10px;
 
+            font-weight: 700;
 
-/* =====================================================
-   HERO
-===================================================== */
+            letter-spacing: 1.5px;
 
-.hero {
-    position: relative;
+            transition:
+                color .3s ease;
+        }
 
-    width: 100%;
-    min-height: 100svh;
 
-    padding:
-        150px 6%
-        80px;
+        .nav-menu a:hover {
+            color: white;
+        }
 
-    display: flex;
 
-    align-items: center;
+        .nav-button {
 
-    overflow: hidden;
-}
+            display: inline-flex;
 
-.hero-content {
-    position: relative;
+            align-items: center;
 
-    width: 100%;
+            justify-content: center;
 
-    max-width: 1000px;
+            padding: 11px 17px;
 
-    z-index: 2;
-}
+            border: 1px solid #444;
 
+            font-size: 9px;
 
-/* SMALL LABEL */
+            font-weight: 800;
 
-.hero-label {
-    display: flex;
+            letter-spacing: 1px;
 
-    align-items: center;
+            transition:
+                background .3s ease,
+                color .3s ease,
+                border-color .3s ease;
+        }
 
-    gap: 12px;
 
-    color: #888;
+        .nav-button:hover {
 
-    font-size: 10px;
+            background: white;
 
-    font-weight: 800;
+            color: black;
 
-    letter-spacing: 3px;
+            border-color: white;
+        }
 
-    margin-bottom: 28px;
-}
 
-.hero-label::before {
-    content: "";
+        /* =====================================================
+           CONTAINER
+        ====================================================== */
 
-    width: 35px;
-    height: 2px;
+        .container {
 
-    background: #ff1e2d;
-}
+            width: 100%;
 
+            max-width: var(--max-width);
 
-/* MAIN TITLE */
+            margin: auto;
 
-.hero h1 {
-    font-size: clamp(75px, 15vw, 190px);
+            padding-left: var(--side-padding);
 
-    line-height: 0.78;
+            padding-right: var(--side-padding);
+        }
 
-    font-weight: 900;
 
-    letter-spacing: -10px;
-}
+        /* =====================================================
+           HERO
+        ====================================================== */
 
-.hero h1 span {
-    color: #ff1e2d;
-}
+        .hero {
 
+            min-height: 100vh;
 
-/* DESCRIPTION */
+            padding-top: 155px;
 
-.hero-description {
-    max-width: 600px;
+            padding-bottom: 100px;
 
-    margin-top: 40px;
+            display: flex;
 
-    color: #888;
+            flex-direction: column;
 
-    font-size: 14px;
+            justify-content: center;
 
-    line-height: 1.9;
-}
+            position: relative;
+        }
 
 
-/* HERO BUTTONS */
+        .hero-top {
 
-.hero-buttons {
-    display: flex;
+            display: flex;
 
-    align-items: center;
+            align-items: center;
 
-    gap: 12px;
+            gap: 10px;
 
-    flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
 
-    margin-top: 32px;
-}
 
-.btn {
-    display: inline-flex;
+        .hero-dot {
 
-    align-items: center;
-    justify-content: center;
+            width: 7px;
 
-    min-height: 48px;
+            height: 7px;
 
-    padding: 0 23px;
+            flex-shrink: 0;
 
-    border-radius: 6px;
+            border-radius: 50%;
 
-    font-size: 10px;
+            background: var(--orange);
 
-    font-weight: 800;
+            box-shadow:
+                0 0 15px var(--orange);
 
-    letter-spacing: 0.5px;
+            animation:
+                blink 1.5s infinite;
+        }
 
-    transition: 0.3s;
-}
 
-.btn-red {
-    background: #ff1e2d;
+        @keyframes blink {
 
-    color: #ffffff;
-}
+            0%,
+            100% {
+                opacity: 1;
+            }
 
-.btn-red:hover {
-    transform: translateY(-3px);
+            50% {
+                opacity: .3;
+            }
+        }
 
-    box-shadow:
-        0 15px 35px rgba(255,30,45,0.25);
-}
 
-.btn-outline {
-    border: 1px solid #292929;
+        .hero-label {
 
-    color: #ddd;
-}
+            color: #777;
 
-.btn-outline:hover {
-    border-color: #ff1e2d;
+            font-size: 9px;
 
-    color: #ff1e2d;
-}
+            font-weight: 700;
 
+            letter-spacing: 2px;
+        }
 
-/* HERO DECORATION */
 
-.hero-decoration {
-    position: absolute;
+        .hero-title {
 
-    right: 7%;
+            margin: 0;
 
-    width: min(360px, 30vw);
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    aspect-ratio: 3 / 4;
+            font-size:
+                clamp(64px, 15vw, 220px);
 
-    border: 1px solid #202020;
+            line-height: .78;
 
-    border-radius: 20px;
+            letter-spacing: -.105em;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,30,45,0.15),
-            rgba(255,255,255,0.015)
-        );
+            font-weight: 700;
+        }
 
-    transform: rotate(7deg);
 
-    overflow: hidden;
+        /* IMPORTANT:
+           Only use the supported WebKit property.
+           No "text-stroke" warning. */
 
-    pointer-events: none;
-}
+        .hero-title .outline {
 
-.hero-decoration::before {
-    content: "Z6IH";
+            color: transparent;
 
-    position: absolute;
+            -webkit-text-stroke: 1px #777;
+        }
 
-    top: 35%;
 
-    left: -80px;
+        .hero-title .orange {
+            color: var(--orange);
+        }
 
-    font-size: 120px;
 
-    font-weight: 900;
+        .hero-bottom {
 
-    color: rgba(255,255,255,0.035);
+            margin-top: 60px;
 
-    transform: rotate(-90deg);
-}
+            display: flex;
 
+            flex-direction: column;
 
-/* =====================================================
-   GENERAL SECTION
-===================================================== */
+            align-items: flex-start;
 
-section {
-    width: 100%;
+            gap: 30px;
+        }
 
-    padding:
-        110px 6%;
-}
 
-.section-label {
-    margin-bottom: 14px;
+        .hero-description {
 
-    color: #ff1e2d;
+            max-width: 500px;
 
-    font-size: 9px;
+            color: #888;
 
-    font-weight: 800;
+            font-size: 13px;
 
-    letter-spacing: 3px;
-}
+            line-height: 1.8;
+        }
 
-.section-title {
-    font-size: clamp(44px, 7vw, 82px);
 
-    line-height: 0.9;
+        .hero-link {
 
-    font-weight: 900;
+            width: max-content;
 
-    letter-spacing: -5px;
-}
+            display: inline-flex;
 
-.section-title span {
-    color: #ff1e2d;
-}
+            align-items: center;
 
+            gap: 15px;
 
-/* =====================================================
-   SKILLS
-===================================================== */
+            padding-bottom: 10px;
 
-.services {
-    display: grid;
+            border-bottom: 1px solid #555;
 
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+            font-size: 9px;
 
-    gap: 14px;
+            font-weight: 800;
 
-    margin-top: 55px;
-}
+            letter-spacing: 1px;
 
-.service {
-    min-width: 0;
+            transition:
+                color .3s ease,
+                border-color .3s ease;
+        }
 
-    min-height: 250px;
 
-    padding: 30px;
+        .hero-link:hover {
 
-    background: #0c0c0c;
+            color: var(--orange);
 
-    border: 1px solid #1b1b1b;
+            border-color: var(--orange);
+        }
 
-    border-radius: 13px;
 
-    transition: 0.35s;
-}
+        .hero-link span {
 
-.service:hover {
-    transform: translateY(-7px);
+            font-size: 18px;
 
-    border-color: #ff1e2d;
-}
+            transition:
+                transform .3s ease;
+        }
 
-.service-number {
-    color: #ff1e2d;
 
-    font-size: 9px;
+        .hero-link:hover span {
+            transform: translateY(4px);
+        }
 
-    font-weight: 800;
-}
 
-.service-icon {
-    margin:
-        30px 0 20px;
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
 
-    font-size: 30px;
-}
+        section {
 
-.service h3 {
-    font-size: 17px;
+            padding-top: 120px;
 
-    margin-bottom: 10px;
-}
+            padding-bottom: 120px;
+        }
 
-.service p {
-    color: #777;
 
-    font-size: 11px;
+        .section-head {
 
-    line-height: 1.8;
-}
+            display: flex;
 
+            flex-direction: column;
 
-/* =====================================================
-   WORK INTRO
-===================================================== */
+            gap: 25px;
 
-.work-intro {
-    display: flex;
+            margin-bottom: 45px;
+        }
 
-    align-items: flex-end;
 
-    justify-content: space-between;
+        .section-number {
 
-    gap: 30px;
-}
+            margin-bottom: 10px;
 
-.work-intro p {
-    max-width: 430px;
+            color: var(--orange);
 
-    color: #777;
+            font-size: 9px;
 
-    font-size: 12px;
+            font-weight: 800;
 
-    line-height: 1.8;
-}
+            letter-spacing: 3px;
+        }
 
 
-/* =====================================================
-   WORK CATEGORY
-===================================================== */
+        .section-title {
 
-.work-category {
-    width: 100%;
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    margin-top: 70px;
-}
+            font-size:
+                clamp(50px, 10vw, 125px);
 
-.category-heading {
-    display: flex;
+            line-height: .8;
 
-    align-items: center;
+            letter-spacing: -.09em;
+        }
 
-    gap: 12px;
 
-    margin-bottom: 20px;
-}
+        .section-description {
 
-.category-heading h3 {
-    font-size: 24px;
+            max-width: 480px;
 
-    font-weight: 800;
-}
+            color: #777;
 
-.category-heading span {
-    color: #ff1e2d;
+            font-size: 12px;
 
-    font-size: 9px;
+            line-height: 1.8;
+        }
 
-    font-weight: 800;
 
-    letter-spacing: 2px;
-}
+        /* =====================================================
+           PROJECT GRID
+           
+           EXACTLY 5 PROJECTS
+           
+           001 AUTOMOTIVE
+           002 MODEL SHOOT
+           003 BRAND SHOOT
+           004 GRAPHIC DESIGNING
+           005 PROJECT FIVE
+        ====================================================== */
 
+        .projects {
 
-/* =====================================================
-   WORK PREVIEW
-===================================================== */
+            display: grid;
 
-.work-preview {
-    position: relative;
+            grid-template-columns: 1fr;
 
-    display: block;
+            gap: var(--project-gap);
 
-    width: 100%;
+            margin-top: 15px;
+        }
 
-    height: min(500px, 48vw);
 
-    min-height: 280px;
+        .project {
 
-    overflow: hidden;
+            display: block;
 
-    background: #0b0b0b;
+            position: relative;
 
-    border: 1px solid #1b1b1b;
+            width: 100%;
 
-    border-radius: 16px;
+            aspect-ratio: 16 / 10;
 
-    cursor: pointer;
-}
+            overflow: hidden;
 
-.work-preview img,
-.work-preview video {
-    width: 100%;
-    height: 100%;
+            background: #111;
 
-    object-fit: cover;
+            isolation: isolate;
 
-    transition: transform 0.7s ease;
-}
+            border: 1px solid #202020;
+        }
 
-.work-preview video {
-    background: #050505;
-}
 
-.work-preview:hover img,
-.work-preview:hover video {
-    transform: scale(1.04);
-}
+        /* VIDEO PROJECTS */
 
+        .project video {
 
-/* DARK GRADIENT */
+            position: absolute;
 
-.work-preview::after {
-    content: "";
+            inset: 0;
 
-    position: absolute;
+            width: 100%;
 
-    inset: 0;
+            height: 100%;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,0.9),
-            rgba(0,0,0,0.05) 70%
-        );
+            object-fit: cover;
 
-    pointer-events: none;
-}
+            opacity: .65;
 
+            transition:
+                transform .7s ease,
+                opacity .7s ease;
+        }
 
-/* PREVIEW INFO */
 
-.preview-info {
-    position: absolute;
+        /* IMAGE PROJECTS */
 
-    left: 32px;
-    bottom: 28px;
+        .project img {
 
-    z-index: 5;
-}
+            position: absolute;
 
-.preview-tag {
-    margin-bottom: 8px;
+            inset: 0;
 
-    color: #ff1e2d;
+            width: 100%;
 
-    font-size: 9px;
+            height: 100%;
 
-    font-weight: 800;
+            object-fit: cover;
 
-    letter-spacing: 2px;
-}
+            opacity: .72;
 
-.preview-info h4 {
-    font-size: 30px;
+            transition:
+                transform .7s ease,
+                opacity .7s ease;
+        }
 
-    font-weight: 800;
-}
 
-.preview-info p {
-    margin-top: 7px;
+        .project:hover video {
 
-    color: #bbb;
+            transform: scale(1.07);
 
-    font-size: 11px;
-}
+            opacity: .95;
+        }
 
 
-/* OPEN ICON */
+        .project:hover img {
 
-.preview-icon {
-    position: absolute;
+            transform: scale(1.07);
 
-    top: 25px;
-    right: 25px;
+            opacity: .95;
+        }
 
-    width: 52px;
-    height: 52px;
 
-    display: grid;
+        .project::after {
 
-    place-items: center;
+            content: "";
 
-    border-radius: 50%;
+            position: absolute;
 
-    background:
-        rgba(255,255,255,0.10);
+            inset: 0;
 
-    backdrop-filter: blur(12px);
+            z-index: 1;
 
-    color: #ffffff;
+            pointer-events: none;
 
-    font-size: 18px;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.92),
+                    transparent 68%
+                );
+        }
 
-    z-index: 5;
 
-    transition: 0.3s;
-}
+        .project-number {
 
-.work-preview:hover .preview-icon {
-    background: #ff1e2d;
+            position: absolute;
 
-    transform: rotate(45deg);
-}
+            z-index: 3;
 
+            top: 17px;
 
-/* =====================================================
-   ABOUT
-===================================================== */
+            left: 17px;
 
-.about {
-    display: grid;
+            color: #999;
 
-    grid-template-columns:
-        minmax(0,1fr)
-        minmax(0,1fr);
+            font-size: 8px;
 
-    gap: 80px;
+            font-weight: 700;
 
-    align-items: center;
-}
+            letter-spacing: 2px;
+        }
 
-.about-text p {
-    max-width: 600px;
 
-    margin-top: 30px;
+        .project-info {
 
-    color: #888;
+            position: absolute;
 
-    font-size: 13px;
+            z-index: 3;
 
-    line-height: 2;
-}
+            left: 17px;
 
+            right: 17px;
 
-/* STATS */
+            bottom: 17px;
 
-.stats {
-    display: grid;
+            display: flex;
 
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
+            align-items: flex-end;
 
-    gap: 14px;
-}
+            justify-content: space-between;
 
-.stat {
-    padding: 32px 25px;
+            gap: 15px;
+        }
 
-    background: #0c0c0c;
 
-    border: 1px solid #1b1b1b;
+        .project-category {
 
-    border-radius: 12px;
-}
+            margin-bottom: 5px;
 
-.stat h3 {
-    color: #ff1e2d;
+            color: var(--orange);
 
-    font-size: 43px;
+            font-size: 7px;
 
-    font-weight: 900;
-}
+            font-weight: 800;
 
-.stat p {
-    margin-top: 6px;
+            letter-spacing: 2px;
+        }
 
-    color: #666;
 
-    font-size: 9px;
+        .project-title {
 
-    font-weight: 700;
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    letter-spacing: 1px;
+            font-size: 21px;
 
-    text-transform: uppercase;
-}
+            font-weight: 600;
 
+            line-height: 1;
+        }
 
-/* =====================================================
-   APPS & SOFTWARE
-===================================================== */
 
-.software-description {
-    max-width: 650px;
+        .project-arrow {
 
-    margin-top: 25px;
+            width: 38px;
 
-    color: #777;
+            height: 38px;
 
-    font-size: 13px;
+            flex-shrink: 0;
 
-    line-height: 1.8;
-}
+            display: flex;
 
-.software-grid {
-    display: grid;
+            align-items: center;
 
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
+            justify-content: center;
 
-    gap: 14px;
+            border: 1px solid #555;
 
-    margin-top: 50px;
-}
+            font-size: 17px;
 
-.software-card {
-    min-width: 0;
+            transition:
+                background .35s ease,
+                border-color .35s ease,
+                transform .35s ease;
+        }
 
-    padding: 30px;
 
-    background: #0c0c0c;
+        .project:hover .project-arrow {
 
-    border: 1px solid #1b1b1b;
+            background: var(--orange);
 
-    border-radius: 13px;
+            border-color: var(--orange);
 
-    transition: 0.35s;
-}
+            transform: rotate(45deg);
+        }
 
-.software-card:hover {
-    transform: translateY(-6px);
 
-    border-color: #ff1e2d;
-}
+        /* =====================================================
+           MARQUEE
+        ====================================================== */
 
-.software-icon {
-    width: 50px;
-    height: 50px;
+        .marquee {
 
-    display: grid;
+            width: 100%;
 
-    place-items: center;
+            overflow: hidden;
 
-    margin-bottom: 23px;
+            padding: 20px 0;
 
-    background:
-        rgba(255,30,45,0.10);
+            margin: 40px 0;
 
-    border-radius: 10px;
+            border-top: 1px solid var(--line);
 
-    color: #ff1e2d;
+            border-bottom: 1px solid var(--line);
+        }
 
-    font-size: 21px;
-}
 
-.software-card h3 {
-    font-size: 18px;
+        .marquee-track {
 
-    margin-bottom: 10px;
-}
+            display: flex;
 
-.software-card p {
-    min-height: 48px;
+            width: max-content;
 
-    color: #777;
+            animation:
+                marquee 25s linear infinite;
+        }
 
-    font-size: 11px;
 
-    line-height: 1.7;
+        .marquee-item {
 
-    margin-bottom: 23px;
-}
+            padding-right: 50px;
 
-.software-button {
-    display: inline-flex;
+            color: #222;
 
-    align-items: center;
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    padding: 11px 16px;
+            font-size:
+                clamp(35px, 7vw, 85px);
 
-    border: 1px solid #292929;
+            font-weight: 700;
 
-    border-radius: 5px;
+            letter-spacing: -.06em;
 
-    color: #ddd;
+            white-space: nowrap;
+        }
 
-    font-size: 9px;
 
-    font-weight: 800;
+        .marquee-item span {
+            color: var(--orange);
+        }
 
-    transition: 0.3s;
-}
 
-.software-button:hover {
-    background: #ff1e2d;
+        @keyframes marquee {
 
-    border-color: #ff1e2d;
+            from {
+                transform: translateX(0);
+            }
 
-    color: white;
-}
+            to {
+                transform: translateX(-50%);
+            }
+        }
 
 
-/* =====================================================
-   CONTACT
-===================================================== */
+        /* =====================================================
+           ABOUT
+        ====================================================== */
 
-.contact-section {
-    text-align: center;
-}
+        .about-layout {
 
-.contact-title {
-    font-size: clamp(48px, 8vw, 100px);
+            display: grid;
 
-    line-height: 0.9;
+            grid-template-columns: 1fr;
 
-    font-weight: 900;
+            gap: 50px;
+        }
 
-    letter-spacing: -6px;
-}
 
-.contact-title span {
-    color: #ff1e2d;
-}
+        .about-big {
 
-.contact-description {
-    max-width: 560px;
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    margin:
-        28px auto 0;
+            font-size:
+                clamp(35px, 7vw, 75px);
 
-    color: #777;
+            line-height: .95;
 
-    font-size: 13px;
+            letter-spacing: -.07em;
+        }
 
-    line-height: 1.8;
-}
 
+        .about-big span {
+            color: #444;
+        }
 
-/* SOCIAL LINKS */
 
-.contact-links {
-    display: flex;
+        .about-text {
 
-    justify-content: center;
+            color: #777;
 
-    gap: 12px;
+            font-size: 13px;
 
-    flex-wrap: wrap;
+            line-height: 1.9;
+        }
 
-    margin-top: 48px;
-}
 
-.contact-card {
-    min-width: 175px;
+        .skills {
 
-    padding: 19px 22px;
+            display: flex;
 
-    background: #0b0b0b;
+            flex-wrap: wrap;
 
-    border: 1px solid #202020;
+            gap: 7px;
 
-    border-radius: 8px;
+            margin-top: 30px;
+        }
 
-    transition: 0.3s;
-}
 
-.contact-card:hover {
-    border-color: #ff1e2d;
+        .skill {
 
-    transform: translateY(-5px);
-}
+            padding: 9px 12px;
 
-.contact-card strong {
-    display: block;
+            border: 1px solid #333;
 
-    margin-bottom: 5px;
+            color: #888;
 
-    font-size: 12px;
-}
+            font-size: 7px;
 
-.contact-card span {
-    color: #666;
+            font-weight: 700;
 
-    font-size: 9px;
-}
+            letter-spacing: 1.5px;
+        }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+        .skill:hover {
 
-footer {
-    width: 100%;
+            color: white;
 
-    padding:
-        35px 6%;
+            border-color: var(--orange);
+        }
 
-    display: flex;
 
-    align-items: center;
+        /* =====================================================
+           SOCIALS
+        ====================================================== */
 
-    justify-content: space-between;
+        .socials {
 
-    gap: 20px;
+            display: grid;
 
-    border-top: 1px solid #171717;
+            grid-template-columns: 1fr;
 
-    color: #555;
+            border-top: 1px solid var(--line);
 
-    font-size: 9px;
-}
+            border-left: 1px solid var(--line);
+        }
 
-footer strong {
-    color: #ffffff;
 
-    font-size: 18px;
-}
+        .social {
 
+            min-height: 150px;
 
-/* =====================================================
-   TABLET
-===================================================== */
+            padding: 25px;
 
-@media screen and (max-width: 1000px) {
+            position: relative;
 
-    .nav-links {
-        gap: 20px;
-    }
+            overflow: hidden;
 
-    .hero-decoration {
-        right: -70px;
+            display: flex;
 
-        opacity: 0.2;
-    }
+            flex-direction: column;
 
-    .services {
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-    }
+            justify-content: space-between;
 
-    .software-grid {
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-    }
+            border-right: 1px solid var(--line);
 
-    .work-preview {
-        height: 440px;
-    }
+            border-bottom: 1px solid var(--line);
 
-}
+            transition:
+                background .4s ease;
+        }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+        .social:hover {
+            background: #111;
+        }
 
-@media screen and (max-width: 700px) {
 
-    /* -----------------------------------------
-       NAVIGATION
-    ----------------------------------------- */
+        .social-top {
 
-    .navbar {
-        height: 65px;
+            display: flex;
 
-        padding:
-            0 5%;
-    }
+            align-items: center;
 
-    .nav-links,
-    .nav-button {
-        display: none;
-    }
+            justify-content: space-between;
+        }
 
-    .menu-button {
-        display: flex;
-    }
 
+        .social-icon {
 
-    /* -----------------------------------------
-       HERO
-    ----------------------------------------- */
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    .hero {
-        min-height: auto;
+            font-size: 22px;
 
-        padding:
-            90px 5%
-            35px;
+            font-weight: 700;
+        }
 
-        align-items: flex-start;
-    }
 
-    .hero-decoration {
-        display: none;
-    }
+        .social-number {
 
-    .hero-label {
-        margin-bottom: 24px;
+            color: #555;
 
-        font-size: 8px;
+            font-size: 8px;
 
-        letter-spacing: 2px;
-    }
+            letter-spacing: 2px;
+        }
 
-    .hero-label::before {
-        width: 25px;
-    }
 
-    .hero h1 {
-        font-size:
-            clamp(65px, 23vw, 105px);
+        .social-name {
 
-        letter-spacing: -6px;
-    }
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    .hero-description {
-        width: 100%;
+            font-size: 25px;
 
-        margin-top: 30px;
+            font-weight: 600;
+        }
 
-        font-size: 12px;
 
-        line-height: 1.8;
-    }
+        .social-handle {
 
-    .hero-buttons {
-        width: 100%;
+            margin-top: 5px;
 
-        margin-top: 27px;
-    }
+            color: #666;
 
-    .btn {
-        min-height: 45px;
+            font-size: 8px;
+        }
 
-        padding:
-            0 17px;
 
-        font-size: 9px;
-    }
+        .social-arrow {
 
+            position: absolute;
 
-    /* -----------------------------------------
-       SECTIONS
-    ----------------------------------------- */
+            right: 20px;
 
-    section {
-        padding:
-            75px 5%;
-    }
+            bottom: 20px;
 
-    .section-label {
-        font-size: 8px;
+            color: #555;
 
-        letter-spacing: 2.5px;
-    }
+            font-size: 20px;
 
-    .section-title {
-        font-size:
-            clamp(40px, 13vw, 65px);
+            transition:
+                color .3s ease,
+                transform .3s ease;
+        }
 
-        letter-spacing: -3px;
-    }
 
+        .social:hover .social-arrow {
 
-    /* -----------------------------------------
-       SERVICES
-    ----------------------------------------- */
+            color: var(--orange);
 
-    .services {
-        grid-template-columns: 1fr;
+            transform:
+                translate(4px, -4px);
+        }
 
-        gap: 10px;
 
-        margin-top: 35px;
-    }
+        /* =====================================================
+           CONTACT
+        ====================================================== */
 
-    .service {
-        min-height: auto;
+        .contact {
 
-        padding: 24px;
-    }
+            position: relative;
 
-    .service-icon {
-        margin:
-            22px 0 17px;
-    }
+            overflow: hidden;
 
+            padding:
+                100px 0;
 
-    /* -----------------------------------------
-       WORK INTRO
-    ----------------------------------------- */
+            border-top: 1px solid var(--line);
 
-    .work-intro {
-        display: block;
-    }
+            border-bottom: 1px solid var(--line);
+        }
 
-    .work-intro p {
-        max-width: 100%;
 
-        margin-top: 20px;
+        .contact::before {
 
-        font-size: 11px;
-    }
+            content: "Z6IH.";
 
+            position: absolute;
 
-    /* -----------------------------------------
-       WORK
-    ----------------------------------------- */
+            right: -30px;
 
-    .work-category {
-        margin-top: 48px;
-    }
+            bottom: -60px;
 
-    .category-heading {
-        margin-bottom: 15px;
-    }
+            color: #111;
 
-    .category-heading h3 {
-        font-size: 19px;
-    }
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    .work-preview {
-        width: 100%;
+            font-size:
+                clamp(150px, 35vw, 500px);
 
-        height: 57vw;
+            font-weight: 700;
 
-        min-height: 220px;
+            line-height: .7;
 
-        max-height: 340px;
+            letter-spacing: -.1em;
 
-        border-radius: 11px;
-    }
+            pointer-events: none;
+        }
 
-    .preview-info {
-        left: 18px;
 
-        bottom: 17px;
+        .contact-content {
 
-        right: 18px;
-    }
+            position: relative;
 
-    .preview-tag {
-        font-size: 7px;
+            z-index: 5;
+        }
 
-        letter-spacing: 1.5px;
-    }
 
-    .preview-info h4 {
-        font-size: 20px;
-    }
+        .contact-label {
 
-    .preview-info p {
-        font-size: 9px;
-    }
+            margin-bottom: 25px;
 
-    .preview-icon {
-        width: 42px;
-        height: 42px;
+            color: var(--orange);
 
-        top: 15px;
-        right: 15px;
+            font-size: 9px;
 
-        font-size: 14px;
-    }
+            font-weight: 800;
 
+            letter-spacing: 3px;
+        }
 
-    /* -----------------------------------------
-       ABOUT
-    ----------------------------------------- */
 
-    .about {
-        grid-template-columns: 1fr;
+        .contact-title {
 
-        gap: 40px;
-    }
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-    .about-text p {
-        margin-top: 22px;
+            font-size:
+                clamp(65px, 15vw, 190px);
 
-        font-size: 12px;
+            line-height: .75;
 
-        line-height: 1.9;
-    }
+            letter-spacing: -.1em;
+        }
 
-    .stats {
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
 
-        gap: 10px;
-    }
+        .contact-title span {
+            color: var(--orange);
+        }
 
-    .stat {
-        padding:
-            25px 18px;
-    }
 
-    .stat h3 {
-        font-size: 35px;
-    }
+        .email {
 
+            display: inline-flex;
 
-    /* -----------------------------------------
-       SOFTWARE
-    ----------------------------------------- */
+            margin-top: 45px;
 
-    .software-description {
-        margin-top: 20px;
+            padding:
+                15px 20px;
 
-        font-size: 11px;
-    }
+            border: 1px solid #444;
 
-    .software-grid {
-        grid-template-columns: 1fr;
+            font-size: 10px;
 
-        gap: 10px;
+            font-weight: 800;
 
-        margin-top: 35px;
-    }
+            letter-spacing: 1px;
 
-    .software-card {
-        padding: 24px;
-    }
+            transition:
+                background .3s ease,
+                color .3s ease,
+                border-color .3s ease;
+        }
 
-    .software-card p {
-        min-height: 0;
-    }
 
+        .email:hover {
 
-    /* -----------------------------------------
-       CONTACT
-    ----------------------------------------- */
+            background: white;
 
-    .contact-title {
-        font-size:
-            clamp(43px, 13vw, 70px);
+            color: black;
 
-        letter-spacing: -4px;
-    }
+            border-color: white;
+        }
 
-    .contact-description {
-        font-size: 11px;
 
-        margin-top: 22px;
-    }
+        /* =====================================================
+           FOOTER
+        ====================================================== */
 
-    .contact-links {
-        display: grid;
+        footer {
 
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
+            width: 100%;
 
-        gap: 9px;
+            max-width: var(--max-width);
 
-        margin-top: 35px;
-    }
+            margin: auto;
 
-    .contact-card {
-        min-width: 0;
+            padding:
+                30px var(--side-padding);
 
-        padding:
-            16px 8px;
-    }
+            display: flex;
 
-    .contact-card strong {
-        font-size: 11px;
-    }
+            flex-direction: column;
 
-    .contact-card span {
-        font-size: 8px;
-    }
+            gap: 10px;
 
+            color: #555;
 
-    /* -----------------------------------------
-       FOOTER
-    ----------------------------------------- */
+            font-size: 7px;
 
-    footer {
-        padding:
-            30px 5%;
+            letter-spacing: 1px;
+        }
 
-        flex-direction: column;
 
-        justify-content: center;
+        .footer-logo {
 
-        text-align: center;
+            font-family:
+                "Space Grotesk",
+                sans-serif;
 
-        gap: 10px;
-    }
+            font-size: 20px;
 
-}
+            font-weight: 700;
 
+            color: white;
+        }
 
-/* =====================================================
-   SMALL PHONES
-===================================================== */
 
-@media screen and (max-width: 390px) {
+        .footer-logo span {
+            color: var(--orange);
+        }
 
-    .hero h1 {
-        font-size: 22vw;
 
-        letter-spacing: -5px;
-    }
+        /* =====================================================
+           REVEAL ANIMATION
+        ====================================================== */
 
-    .hero-description {
-        font-size: 11px;
-    }
+        .reveal {
 
-    .hero-buttons {
-        flex-direction: column;
+            opacity: 0;
 
-        align-items: stretch;
-    }
+            transform:
+                translateY(35px);
 
-    .btn {
-        width: 100%;
-    }
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
 
-    .work-preview {
-        height: 58vw;
 
-        min-height: 205px;
-    }
+        .reveal.visible {
 
-    .preview-info h4 {
-        font-size: 18px;
-    }
+            opacity: 1;
 
-}
+            transform:
+                translateY(0);
+        }
 
 
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
+        /* =====================================================
+           TABLET
+        ====================================================== */
 
-@media screen and (max-width: 340px) {
+        @media (min-width: 650px) {
 
-    .navbar {
-        padding:
-            0 4%;
-    }
+            .hero-bottom {
 
-    section,
-    .hero {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
+                flex-direction: row;
 
-    .hero h1 {
-        font-size: 21vw;
-    }
+                align-items: flex-end;
 
-    .contact-links {
-        grid-template-columns: 1fr;
-    }
+                justify-content: space-between;
+            }
 
-}
 
-</style>
+            .projects {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+
+            .socials {
+
+                grid-template-columns:
+                    repeat(3, minmax(0, 1fr));
+            }
+
+
+            .about-layout {
+
+                grid-template-columns:
+                    minmax(0, 1.1fr)
+                    minmax(0, .9fr);
+
+                align-items: center;
+
+                gap: 80px;
+            }
+
+
+            footer {
+
+                flex-direction: row;
+
+                align-items: center;
+
+                justify-content: space-between;
+            }
+
+        }
+
+
+        /* =====================================================
+           DESKTOP
+        ====================================================== */
+
+        @media (min-width: 950px) {
+
+            .nav-menu {
+                display: flex;
+            }
+
+
+            .hero {
+                padding-top: 175px;
+            }
+
+
+            .section-head {
+
+                flex-direction: row;
+
+                align-items: flex-end;
+
+                justify-content: space-between;
+            }
+
+
+            .projects {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: var(--project-gap);
+            }
+
+
+            .project {
+                aspect-ratio: 16 / 10;
+            }
+
+
+            .contact {
+
+                padding-top: 170px;
+
+                padding-bottom: 170px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 649px) {
+
+            :root {
+                --side-padding: 20px;
+            }
+
+
+            .nav {
+                height: 65px;
+            }
+
+
+            .nav-button {
+
+                padding:
+                    9px 12px;
+
+                font-size: 8px;
+            }
+
+
+            .hero {
+
+                min-height: 90vh;
+
+                padding-top: 125px;
+
+                padding-bottom: 80px;
+            }
+
+
+            .hero-title {
+
+                font-size:
+                    clamp(60px, 19vw, 120px);
+
+                letter-spacing:
+                    -.09em;
+            }
+
+
+            .hero-bottom {
+                margin-top: 45px;
+            }
+
+
+            .hero-description {
+
+                max-width: 100%;
+
+                font-size: 12px;
+            }
+
+
+            section {
+
+                padding-top: 80px;
+
+                padding-bottom: 80px;
+            }
+
+
+            .section-head {
+
+                margin-bottom: 30px;
+            }
+
+
+            .section-title {
+
+                font-size:
+                    clamp(52px, 15vw, 90px);
+            }
+
+
+            .section-description {
+                font-size: 11px;
+            }
+
+
+            /* Keep a small gap between projects */
+
+            .projects {
+                gap: 15px;
+            }
+
+
+            .project {
+
+                aspect-ratio: 16 / 10;
+            }
+
+
+            .project-info {
+
+                left: 14px;
+
+                right: 14px;
+
+                bottom: 14px;
+            }
+
+
+            .project-number {
+
+                top: 14px;
+
+                left: 14px;
+            }
+
+
+            .project-title {
+                font-size: 18px;
+            }
+
+
+            .about-layout {
+                gap: 40px;
+            }
+
+
+            .contact {
+                padding: 80px 0;
+            }
+
+
+            .contact::before {
+                font-size: 150px;
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL PHONES
+        ====================================================== */
+
+        @media (max-width: 380px) {
+
+            .nav-button {
+
+                padding:
+                    8px 9px;
+
+                font-size: 7px;
+            }
+
+
+            .logo {
+                font-size: 22px;
+            }
+
+
+            .hero-title {
+                font-size: 57px;
+            }
+
+
+            .project-title {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -1567,858 +1589,1607 @@ footer strong {
 <body>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+    <!-- =====================================================
+         =====================================================
+         ✏️ EDIT YOUR WEBSITE HERE
+         =====================================================
 
-<nav class="navbar">
+         You can change your project information here.
 
-    <a href="#home" class="logo">
-        Z6<span>IH</span>
-    </a>
+         PROJECT 1 = VIDEO
+         PROJECT 2 = VIDEO
+         PROJECT 3 = VIDEO
+         PROJECT 4 = IMAGE
+         PROJECT 5 = IMAGE
 
+         =====================================================
+    ====================================================== -->
 
-    <!-- DESKTOP NAV -->
+    <script>
 
-    <ul class="nav-links">
+        const SITE = {
 
-        <li>
-            <a href="#work">
-                WORK
-            </a>
-        </li>
 
-        <li>
-            <a href="#services">
-                SKILLS
-            </a>
-        </li>
+            /* =================================================
+               BASIC INFORMATION
+            ================================================= */
 
-        <li>
-            <a href="#software">
-                APPS & SOFTWARE
-            </a>
-        </li>
+            logo:
+                "Z6IH.",
 
-        <li>
-            <a href="#contact">
-                CONTACT
-            </a>
-        </li>
+            email:
+                "YOUR_EMAIL@example.com",
 
-    </ul>
 
+            /* =================================================
+               HERO
+            ================================================= */
 
-    <a href="#contact"
-       class="nav-button">
+            heroLabel:
+                "AVAILABLE FOR CREATIVE PROJECTS",
 
-        CONNECT
+            heroDescription:
+                "Z6IH. is my digital playground for video editing, motion graphics, visual design and creative experiments.",
 
-    </a>
 
+            /* =================================================
+               PROJECT 1
+               AUTOMOTIVE — VIDEO
+            ================================================= */
 
-    <!-- MOBILE MENU BUTTON -->
+            project1: {
 
-    <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open menu">
+                type:
+                    "video",
 
-        ☰
+                file:
+                    "YELLOW GRADE.mp4",
 
-    </button>
+                link:
+                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
 
-</nav>
+                category:
+                    "VIDEO / EDITING",
 
+                title:
+                    "AUTOMOTIVE"
 
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
+            },
 
-<div class="mobile-menu"
-     id="mobileMenu">
 
-    <a href="#work">
-        WORK
-    </a>
+            /* =================================================
+               PROJECT 2
+               MODEL SHOOT — VIDEO
+            ================================================= */
 
-    <a href="#services">
-        SKILLS
-    </a>
+            project2: {
 
-    <a href="#software">
-        APPS & SOFTWARE
-    </a>
+                type:
+                    "video",
 
-    <a href="#contact">
-        CONTACT
-    </a>
+                file:
+                    "website11.mp4",
 
-</div>
+                link:
+                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
 
+                category:
+                    "VIDEO / EDITING",
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+                title:
+                    "MODEL SHOOT"
 
-<section class="hero"
-         id="home">
+            },
 
-    <div class="hero-content">
 
-        <div class="hero-label">
-            CREATIVE EDITOR
-        </div>
+            /* =================================================
+               PROJECT 3
+               BRAND SHOOT — VIDEO
+            ================================================= */
 
+            project3: {
 
-        <h1>
-            Z6<span>IH</span>
-        </h1>
+                type:
+                    "video",
 
+                file:
+                    "NEWUPLOAD.mp4",
 
-        <p class="hero-description">
+                link:
+                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
 
-            Video editor, videographer and visual designer
-            creating cinematic videos, automotive visuals,
-            graphic designs and creative digital content.
+                category:
+                    "VIDEO / EDITING",
 
-        </p>
+                title:
+                    "BRAND SHOOT"
 
+            },
 
-        <div class="hero-buttons">
 
-            <a href="#work"
-               class="btn btn-red">
+            /* =================================================
+               PROJECT 4
+               GRAPHIC DESIGNING — IMAGE
+            ================================================= */
 
-                VIEW MY WORK
+            project4: {
 
-            </a>
+                type:
+                    "image",
 
+                file:
+                    "WEBSITE POSTER.jpg",
 
-            <a href="#software"
-               class="btn btn-outline">
+                link:
+                    "#",
 
-                APPS & SOFTWARE
+                category:
+                    "DESIGNING",
 
-            </a>
+                title:
+                    "GRAPHIC DESIGNING",
 
-        </div>
+                alt:
+                    "Graphic Designing Project"
 
-    </div>
+            },
 
 
+            /* =================================================
+               PROJECT 5
+               IMAGE
+            ================================================= */
 
-</section>
+            project5: {
 
+                type:
+                    "image",
 
-<!-- =====================================================
-     SKILLS
-===================================================== -->
+                file:
+                    "UPLOAD ASSISTANCE.png",
 
-<section id="services">
+                link:
+                    "#",
 
-    <div class="section-label">
-        WHAT I DO
-    </div>
+                category:
+                    "FREE, IF NEEDED",
 
+                title:
+                    "UPLOAD ASSISTANCE",
 
-    <h2 class="section-title">
-    S<span>KILLS</span>
-    </h2>
+                alt:
+                    "Project Five"
 
+            },
 
-    <div class="services">
 
+            /* =================================================
+               SOCIAL MEDIA
+            ================================================= */
 
-        <!-- VIDEO EDITING -->
+            instagram:
+                "https://www.instagram.com/_z6ih__?stkn=NHlyc2ZyMnp6bnNp",
 
-        <div class="service">
+            youtube:
+                "",
 
-            <div class="service-number">
-                01
-            </div>
+            telegram:
+                "https://t.me/Z6IH_softwaresandresources",
 
-            <div class="service-icon">
-                🎬
-            </div>
 
-            <h3>
-                Video Editing
-            </h3>
+            instagramHandle:
+                "@Z6IH",
 
-            <p>
-                Cinematic edits, reels, short-form content,
-                transitions and professional storytelling.
-            </p>
+            youtubeHandle:
+                "@YOUR_YOUTUBE",
 
-        </div>
+            telegramHandle:
+                "@Z6IH"
 
 
-        <!-- VIDEOGRAPHY -->
+        };
 
-        <div class="service">
 
-            <div class="service-number">
-                02
-            </div>
+        /* =====================================================
+           =====================================================
+           DO NOT EDIT BELOW THIS LINE
+           =====================================================
+        ====================================================== */
 
-            <div class="service-icon">
-                🚗
-            </div>
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-            <h3>
-                Videography
-            </h3>
 
-            <p>
-                Automotive videography, cinematic shots
-                and visual storytelling.
-            </p>
+                /* =================================================
+                   LOGO
+                ================================================= */
 
-        </div>
+                document.querySelectorAll(
+                    ".logo, .footer-logo"
+                ).forEach(
+                    function (element) {
 
+                        element.innerHTML =
+                            SITE.logo.replace(
+                                ".",
+                                "<span>.</span>"
+                            );
 
-        <!-- GRAPHIC DESIGN -->
+                    }
+                );
 
-        <div class="service">
 
-            <div class="service-number">
-                03
-            </div>
+                /* =================================================
+                   HERO TEXT
+                ================================================= */
 
-            <div class="service-icon">
-                🎨
-            </div>
+                const heroLabel =
+                    document.querySelector(
+                        ".hero-label"
+                    );
 
-            <h3>
-                Graphic Design
-            </h3>
 
-            <p>
-                Posters, social media graphics and
-                creative visual compositions.
-            </p>
+                if (heroLabel) {
 
-        </div>
-
-
-        <!-- LIGHTROOM -->
-
-        <div class="service">
-
-            <div class="service-number">
-                04
-            </div>
-
-            <div class="service-icon">
-                📸
-            </div>
-
-            <h3>
-                Lightroom
-            </h3>
-
-            <p>
-                Photo editing, color grading and
-                cinematic image enhancement.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     MY WORK
-===================================================== -->
-
-<section id="work">
-
-
-    <div class="work-intro">
-
-        <div>
-
-            <div class="section-label">
-                SELECTED WORK
-            </div>
-
-            <h2 class="section-title">
-                MY <span>WORK</span>
-            </h2>
-
-        </div>
-
-
-        <p>
-
-            One selected work from each creative category.
-            Click or tap any preview to open the complete work.
-
-        </p>
-
-    </div>
-
-
-    <!-- =================================================
-         01 VIDEO EDITING
-    ================================================== -->
-
-    <div class="work-category">
-
-    
-
-        <!--
-            CHANGE:
-
-            video-editing.mp4
-            YOUR_VIDEO_LINK
-
-            Put your video file in the same folder
-            as this HTML file.
-        -->
-
-        <a href="https://www.instagram.com/reel/Dcqk0d9ywOn/?stkn=MWFicm9iYjc1c3ZmZg=="
-           target="_blank"
-           rel="noopener"
-           class="work-preview">
-
-
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                controlslist="nodownload noplaybackrate"
-                disablepictureinpicture>
-                <source src="./0910%20%281%29.mp4" type="video/mp4">
-            </video>
-
-
-            <div class="preview-icon">
-                ↗
-            </div>
-
-
-            <div class="preview-info">
-
-                <div class="preview-tag">
-                    VIDEO EDITING
-                </div>
-
-                <h4>
-                    Automotive Shoot
-                </h4>
-
-                <p>
-                    Tap to watch the complete video
-                </p>
-
-            </div>
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         02 VIDEOGRAPHY
-    ================================================== -->
-
-    <div class="work-category">
-
-        
-
-        </div>
-
-
-        <!--
-            CHANGE:
-
-            videography.jpg
-            YOUR_VIDEOGRAPHY_LINK
-        -->
-
-        <a href="https://www.instagram.com/reel/DdBt5hwzF7R/?stkn=N3UwbHFpNnFld3U3"
-           target="_blank"
-           rel="noopener"
-           class="work-preview">
-
-
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                controlslist="nodownload noplaybackrate"
-                disablepictureinpicture>
-                <source src="./website11.mp4" type="video/mp4">
-            </video>
-
-            <div class="preview-info">
-
-                <div class="preview-tag">
-                    VIDEOGRAPHY
-                </div>
-
-                <h4>
-                   Brand, Model Shoot
-                </h4>
-
-                <p>
-                    Tap to view the complete work
-                </p>
-
-            </div>
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         03 GRAPHIC DESIGN
-    ================================================== -->
-
-    <div class="work-category">
-
-        
-
-
-        <!--
-            CHANGE:
-
-            graphic-design.jpg
-            YOUR_GRAPHIC_DESIGN_LINK
-        -->
-
-        <a href="https://www.instagram.com/p/DceQgzFy9V-/?stkn=MXRybG85Zzc4eGdoMg=="
-           target="_blank"
-           rel="noopener"
-           class="work-preview">
-
-
-            <img
-                src="onam 4.5.jpg"
-                alt="Z6IH Graphic Design Work">
-
-
-            <div class="preview-icon">
-                ↗
-            </div>
-
-
-            <div class="preview-info">
-
-                <div class="preview-tag">
-                    GRAPHIC DESIGN
-                </div>
-
-                <h4>
-                   Poster Design
-                </h4>
-
-                <p>
-                    Tap to view the complete design
-                </p>
-
-            </div>
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         04 LIGHTROOM
-    ================================================== -->
-
-    <div class="work-category">
-
-        <div class="category-heading">
-
-            <h3>
-                Lightroom
-            </h3>
-
-            <span>
-                04
-            </span>
-
-        </div>
-
-
-        <!--
-            CHANGE:
-
-            lightroom.jpg
-            YOUR_LIGHTROOM_LINK
-        -->
-
-        <a href="YOUR_LIGHTROOM_LINK"
-           target="_blank"
-           rel="noopener"
-           class="work-preview">
-
-
-            <img
-                src="lightroom.jpg"
-                alt="Z6IH Lightroom Work">
-
-
-            <div class="preview-icon">
-                ↗
-            </div>
-
-
-            <div class="preview-info">
-
-                <div class="preview-tag">
-                    LIGHTROOM
-                </div>
-
-                <h4>
-                    Cinematic Color
-                </h4>
-
-                <p>
-                    Tap to view the complete edit
-                </p>
-
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-
-
-
-<!-- =====================================================
-     APPS & SOFTWARE
-===================================================== -->
-
-<section id="software">
-
-
-    <div class="section-label">
-        FOR THE COMMUNITY
-    </div>
-
-
-    <h2 class="section-title">
-
-        APPS & <span>SOFTWARE</span>
-
-    </h2>
-
-
-    <p class="software-description">
-
-        Useful apps, software, presets, project files
-        and other resources that I share with my followers.
-
-    </p>
-
-
-    <div class="software-grid">
-
-
-        
-
-
-        <!-- SOFTWARE -->
-
-        <div class="software-card">
-
-            <div class="software-icon">
-                ✦
-            </div>
-
-            <h3>
-                Software
-            </h3>
-
-            <p>
-                Creative software and editing tools
-                shared with the community.
-            </p>
-
-            <a href="https://z6renders-a11y.github.io/apps-and-software/"
-               target="_blank"
-               rel="noopener"
-               class="software-button">
-
-                VIEW SOFTWARE →
-
-            </a>
-
-        </div>
-
-
-        <!-- FILES -->
-
-        <div class="software-card">
-
-            <div class="software-icon">
-                ⬇
-            </div>
-
-            <h3>
-                Telegram channel
-            </h3>
-
-            <p>
-                Presets, project files and useful
-                resources for creators.
-            </p>
-
-            <a href="https://t.me/+tXl1vTBiRJQwZGJl"
-               target="_blank"
-               rel="noopener"
-               class="software-button">
-
-                VIEW FILES →
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONNECT
-===================================================== -->
-
-<section id="contact"
-         class="contact-section">
-
-
-    <div class="section-label">
-        CONNECT
-    </div>
-
-
-    <h2 class="contact-title">
-
-        FIND ME <span>ONLINE.</span>
-
-    </h2>
-
-
-    <p class="contact-description">
-
-        Follow my work, join my community or contact me
-        through any of the platforms below.
-
-    </p>
-
-
-    <div class="contact-links">
-
-
-        <!-- INSTAGRAM -->
-
-        <a href="https://www.instagram.com/_z6ih__?stkn=MTU3OGh4aG5xYjUxNA%3D%3D"
-           target="_blank"
-           rel="noopener"
-           class="contact-card">
-
-            <strong>
-                Instagram
-            </strong>
-
-            <span>
-                _Z6IH__
-            </span>
-
-        </a>
-
-
-        <!-- TELEGRAM -->
-
-        <a href="https://t.me/+tXl1vTBiRJQwZGJl"
-           target="_blank"
-           rel="noopener"
-           class="contact-card">
-
-            <strong>
-                Telegram
-            </strong>
-
-            <span>
-                Join Channel
-            </span>
-
-        </a>
-
-
-        <!-- YOUTUBE -->
-
-        <a href="https://youtube.com/@YOUR_USERNAME"
-           target="_blank"
-           rel="noopener"
-           class="contact-card">
-
-            <strong>
-                YouTube
-            </strong>
-
-            <span>
-                Watch Videos
-            </span>
-
-        </a>
-
-
-        <!-- EMAIL -->
-
-        <a href="mailto:YOUR_EMAIL@gmail.com"
-           class="contact-card">
-
-            <strong>
-                Email
-            </strong>
-
-            <span>
-                Contact Me
-            </span>
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <strong>
-        Z6IH
-    </strong>
-
-    <span>
-        © 2026 Z6IH
-    </span>
-
-    <span>
-        EDIT • CREATE • INSPIRE
-    </span>
-
-</footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-
-menuButton.addEventListener("click", function () {
-
-    mobileMenu.classList.toggle("active");
-
-});
-
-
-/* CLOSE MOBILE MENU
-   WHEN A LINK IS CLICKED
-========================================= */
-
-const mobileLinks =
-    mobileMenu.querySelectorAll("a");
-
-
-mobileLinks.forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        mobileMenu.classList.remove("active");
-
-    });
-
-});
-
-
-/* =========================================
-   SCROLL ANIMATION
-========================================= */
-
-const animatedElements =
-    document.querySelectorAll(
-        ".service, .work-preview, .software-card, .stat, .contact-card"
-    );
-
-
-const observer =
-    new IntersectionObserver(
-        function(entries) {
-
-            entries.forEach(function(entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform =
-                        "translateY(0)";
+                    heroLabel.textContent =
+                        SITE.heroLabel;
 
                 }
 
-            });
 
-        },
-        {
-            threshold: 0.08
-        }
-    );
+                const heroDescription =
+                    document.querySelector(
+                        ".hero-description"
+                    );
 
 
-animatedElements.forEach(function(element) {
+                if (heroDescription) {
 
-    element.style.opacity = "0";
+                    heroDescription.textContent =
+                        SITE.heroDescription;
 
-    element.style.transform =
-        "translateY(25px)";
+                }
 
-    element.style.transition =
-        "opacity .7s ease, transform .7s ease";
 
-    observer.observe(element);
+                /* =================================================
+                   PROJECT DATA
+                ================================================= */
 
-});
+                const projects = [
 
-</script>
+                    SITE.project1,
+
+                    SITE.project2,
+
+                    SITE.project3,
+
+                    SITE.project4,
+
+                    SITE.project5
+
+                ];
+
+
+                const projectElements =
+                    document.querySelectorAll(
+                        ".project"
+                    );
+
+
+                projectElements.forEach(
+                    function (element, index) {
+
+                        const data =
+                            projects[index];
+
+
+                        if (!data) {
+                            return;
+                        }
+
+
+                        /* -----------------------------------------
+                           PROJECT LINK
+                        ------------------------------------------ */
+
+                        element.href =
+                            data.link;
+
+
+                        /* -----------------------------------------
+                           CATEGORY
+                        ------------------------------------------ */
+
+                        const category =
+                            element.querySelector(
+                                ".project-category"
+                            );
+
+
+                        if (category) {
+
+                            category.textContent =
+                                data.category;
+
+                        }
+
+
+                        /* -----------------------------------------
+                           TITLE
+                        ------------------------------------------ */
+
+                        const title =
+                            element.querySelector(
+                                ".project-title"
+                            );
+
+
+                        if (title) {
+
+                            title.textContent =
+                                data.title;
+
+                        }
+
+
+                        /* -----------------------------------------
+                           NUMBER
+                        ------------------------------------------ */
+
+                        const number =
+                            element.querySelector(
+                                ".project-number"
+                            );
+
+
+                        if (number) {
+
+                            number.textContent =
+                                String(
+                                    index + 1
+                                ).padStart(
+                                    3,
+                                    "0"
+                                );
+
+                        }
+
+
+                        /* -----------------------------------------
+                           VIDEO PROJECT
+                        ------------------------------------------ */
+
+                        if (
+                            data.type ===
+                            "video"
+                        ) {
+
+                            const oldImage =
+                                element.querySelector(
+                                    "img"
+                                );
+
+
+                            if (oldImage) {
+                                oldImage.remove();
+                            }
+
+
+                            let video =
+                                element.querySelector(
+                                    "video"
+                                );
+
+
+                            if (!video) {
+
+                                video =
+                                    document.createElement(
+                                        "video"
+                                    );
+
+                                element.prepend(
+                                    video
+                                );
+
+                            }
+
+
+                            video.src =
+                                data.file;
+
+                            video.autoplay =
+                                true;
+
+                            video.muted =
+                                true;
+
+                            video.loop =
+                                true;
+
+                            video.playsInline =
+                                true;
+
+                            video.preload =
+                                "metadata";
+
+                        }
+
+
+                        /* -----------------------------------------
+                           IMAGE PROJECT
+                        ------------------------------------------ */
+
+                        if (
+                            data.type ===
+                            "image"
+                        ) {
+
+                            const oldVideo =
+                                element.querySelector(
+                                    "video"
+                                );
+
+
+                            if (oldVideo) {
+                                oldVideo.remove();
+                            }
+
+
+                            let image =
+                                element.querySelector(
+                                    "img"
+                                );
+
+
+                            if (!image) {
+
+                                image =
+                                    document.createElement(
+                                        "img"
+                                    );
+
+                                element.prepend(
+                                    image
+                                );
+
+                            }
+
+
+                            image.src =
+                                data.file;
+
+                            image.alt =
+                                data.alt ||
+                                data.title;
+
+                        }
+
+                    }
+                );
+
+
+                /* =================================================
+                   SOCIAL LINKS
+                ================================================= */
+
+                const socials =
+                    document.querySelectorAll(
+                        ".social"
+                    );
+
+
+                if (socials[0]) {
+
+                    socials[0].href =
+                        SITE.instagram;
+
+                    socials[0].querySelector(
+                        ".social-handle"
+                    ).textContent =
+                        SITE.instagramHandle;
+
+                }
+
+
+                if (socials[1]) {
+
+                    socials[1].href =
+                        SITE.youtube;
+
+                    socials[1].querySelector(
+                        ".social-handle"
+                    ).textContent =
+                        SITE.youtubeHandle;
+
+                }
+
+
+                if (socials[2]) {
+
+                    socials[2].href =
+                        SITE.telegram;
+
+                    socials[2].querySelector(
+                        ".social-handle"
+                    ).textContent =
+                        SITE.telegramHandle;
+
+                }
+
+
+                /* =================================================
+                   EMAIL
+                ================================================= */
+
+                const email =
+                    document.querySelector(
+                        ".email"
+                    );
+
+
+                if (email) {
+
+                    email.href =
+                        "mailto:" +
+                        SITE.email;
+
+                    email.textContent =
+                        SITE.email +
+                        " →";
+
+                }
+
+
+                /* =================================================
+                   FOOTER YEAR
+                ================================================= */
+
+                const footerYear =
+                    document.querySelector(
+                        ".footer-year"
+                    );
+
+
+                if (footerYear) {
+
+                    footerYear.textContent =
+                        "© " +
+                        new Date().getFullYear() +
+                        " " +
+                        SITE.logo +
+                        " ALL RIGHTS RESERVED.";
+
+                }
+
+
+                /* =================================================
+                   SCROLL REVEAL
+                ================================================= */
+
+                const revealElements =
+                    document.querySelectorAll(
+                        ".reveal"
+                    );
+
+
+                const revealObserver =
+                    new IntersectionObserver(
+
+                        function (entries) {
+
+                            entries.forEach(
+                                function (entry) {
+
+                                    if (
+                                        entry.isIntersecting
+                                    ) {
+
+                                        entry.target.classList.add(
+                                            "visible"
+                                        );
+
+                                        revealObserver.unobserve(
+                                            entry.target
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+                        },
+
+                        {
+                            threshold: 0.08
+                        }
+
+                    );
+
+
+                revealElements.forEach(
+                    function (element) {
+
+                        revealObserver.observe(
+                            element
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   VIDEO PLAY / PAUSE
+                ================================================= */
+
+                const videos =
+                    document.querySelectorAll(
+                        "video"
+                    );
+
+
+                videos.forEach(
+                    function (video) {
+
+                        video.muted =
+                            true;
+
+                        video.setAttribute(
+                            "playsinline",
+                            ""
+                        );
+
+                    }
+                );
+
+
+                const videoObserver =
+                    new IntersectionObserver(
+
+                        function (entries) {
+
+                            entries.forEach(
+                                function (entry) {
+
+                                    const video =
+                                        entry.target;
+
+
+                                    if (
+                                        entry.isIntersecting
+                                    ) {
+
+                                        video
+                                            .play()
+                                            .catch(
+                                                function () {}
+                                            );
+
+                                    } else {
+
+                                        video.pause();
+
+                                    }
+
+                                }
+                            );
+
+                        },
+
+                        {
+                            threshold: 0.15
+                        }
+
+                    );
+
+
+                videos.forEach(
+                    function (video) {
+
+                        videoObserver.observe(
+                            video
+                        );
+
+                    }
+                );
+
+
+                /* =================================================
+                   SMOOTH INTERNAL LINKS
+                ================================================= */
+
+                document.querySelectorAll(
+                    'a[href^="#"]'
+                ).forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            function (event) {
+
+                                const target =
+                                    document.querySelector(
+                                        this.getAttribute(
+                                            "href"
+                                        )
+                                    );
+
+
+                                if (!target) {
+                                    return;
+                                }
+
+
+                                event.preventDefault();
+
+
+                                const offset =
+                                    85;
+
+
+                                const position =
+                                    target.getBoundingClientRect()
+                                        .top +
+                                    window.scrollY -
+                                    offset;
+
+
+                                window.scrollTo({
+
+                                    top:
+                                        position,
+
+                                    behavior:
+                                        "smooth"
+
+                                });
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+    <!-- =====================================================
+         TOP LINE
+    ====================================================== -->
+
+    <div class="top-line"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header>
+
+        <nav class="nav">
+
+            <a
+                href="#home"
+                class="logo"
+            >
+                Z6IH<span>.</span>
+            </a>
+
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="#work">
+                        WORK
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#socials">
+                        SOCIALS
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <a
+                href="#contact"
+                class="nav-button"
+            >
+                CONTACT →
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main id="home">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <div class="container">
+
+            <section class="hero">
+
+                <div class="hero-top">
+
+                    <div class="hero-dot"></div>
+
+                    <div class="hero-label">
+                        AVAILABLE FOR CREATIVE PROJECTS
+                    </div>
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    <span class="outline">
+                        MAKE
+                    </span>
+
+                    <br>
+
+                    <span class="orange">
+                        NOISE.
+                    </span>
+
+                    <br>
+
+                    <span>
+                        VISUALLY.
+                    </span>
+
+                </h1>
+
+
+                <div class="hero-bottom">
+
+                    <p class="hero-description">
+                        Z6IH. is my digital playground
+                        for video editing, motion graphics,
+                        visual design and creative experiments.
+                    </p>
+
+
+                    <a
+                        href="#work"
+                        class="hero-link"
+                    >
+
+                        EXPLORE THE WORK
+
+                        <span>
+                            ↓
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             WORK
+             
+             ONLY 5 PROJECTS.
+             
+             NO FEATURED PROJECT.
+        ================================================== -->
+
+        <section id="work">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            01 / SELECTED WORK
+                        </div>
+
+                        <h2 class="section-title">
+                            WORK.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        A selection of my video editing,
+                        creative design and visual work.
+
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT GRID
+                ================================================== -->
+
+                <div class="projects">
+
+
+                    <!-- =============================================
+                         PROJECT 001 — AUTOMOTIVE
+                    ============================================== -->
+
+                    <a
+                        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project reveal"
+                    >
+
+                        <video
+                            src="YELLOW GRADE.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        ></video>
+
+
+                        <div class="project-number">
+                            
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <div class="project-category">
+                                    VIDEO / EDITING
+                                </div>
+
+                                <div class="project-title">
+                                    AUTOMOTIVE
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- =============================================
+                         PROJECT 002 — MODEL SHOOT
+                    ============================================== -->
+
+                    <a
+                        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project reveal"
+                    >
+
+                        <video
+                            src="website11.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        ></video>
+
+
+                        <div class="project-number">
+                           
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <div class="project-category">
+                                    VIDEO / EDITING
+                                </div>
+
+                                <div class="project-title">
+                                    MODEL SHOOT
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- =============================================
+                         PROJECT 003 — BRAND SHOOT
+                    ============================================== -->
+
+                    <a
+                        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project reveal"
+                    >
+
+                        <video
+                            src="NEWUPLOAD.mp4"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                        ></video>
+
+
+                        <div class="project-number">
+                            
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <div class="project-category">
+                                    VIDEO / EDITING
+                                </div>
+
+                                <div class="project-title">
+                                    BRAND SHOOT
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- =============================================
+                         PROJECT 004 — GRAPHIC DESIGNING
+                    ============================================== -->
+
+                    <a
+                        href="#"
+                        class="project reveal"
+                    >
+
+                        <img
+                            src="project4.jpg"
+                            alt="Graphic Designing Project"
+                        >
+
+
+                        <div class="project-number">
+                            
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <div class="project-category">
+                                    DESIGNING
+                                </div>
+
+                                <div class="project-title">
+                                    GRAPHIC DESIGNING
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- =============================================
+                         PROJECT 005 — PROJECT FIVE
+                    ============================================== -->
+
+                    <a
+                        href="#"
+                        class="project reveal"
+                    >
+
+                        <img
+                            src="UPDATION POSTERR.jpg"
+                            alt="Project Five"
+                        >
+
+
+                        <div class="project-number">
+                           
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <div>
+
+                                <div class="project-category">
+                                    CREATIVE
+                                </div>
+
+                                <div class="project-title">
+                                    PROJECT FIVE
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-arrow">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MARQUEE
+        ================================================== -->
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <div class="marquee-item">
+
+                    CREATE
+                    <span>•</span>
+
+                    EDIT
+                    <span>•</span>
+
+                    DESIGN
+                    <span>•</span>
+
+                    CREATE
+                    <span>•</span>
+
+                    EDIT
+                    <span>•</span>
+
+                    DESIGN
+                    <span>•</span>
+
+                </div>
+
+
+                <div class="marquee-item">
+
+                    CREATE
+                    <span>•</span>
+
+                    EDIT
+                    <span>•</span>
+
+                    DESIGN
+                    <span>•</span>
+
+                    CREATE
+                    <span>•</span>
+
+                    EDIT
+                    <span>•</span>
+
+                    DESIGN
+                    <span>•</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            02 / ABOUT
+                        </div>
+
+                        <h2 class="section-title">
+                            WHO.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-layout reveal">
+
+                    <div>
+
+                        <h3 class="about-big">
+
+                            IDEAS ARE
+
+                            <span>
+                                CHEAP.
+                            </span>
+
+                            <br>
+
+                            EXECUTION
+
+                            <span>
+                                ISN'T.
+                            </span>
+
+                        </h3>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="about-text">
+
+                            Z6IH. is a personal creative
+                            portfolio focused on making
+                            digital content that grabs
+                            attention.
+
+                            <br><br>
+
+                            From video editing and motion
+                            graphics to visual design and
+                            experimental content, this is
+                            where ideas become visuals.
+
+                            <br><br>
+
+                            The goal is simple:
+
+                            <br>
+
+                            Make something people remember.
+
+                        </p>
+
+
+                        <div class="skills">
+
+                            <div class="skill">
+                                VIDEO EDITING
+                            </div>
+
+                            <div class="skill">
+                                MOTION DESIGN
+                            </div>
+
+                            <div class="skill">
+                                GRAPHIC DESIGN
+                            </div>
+
+                            <div class="skill">
+                                VFX
+                            </div>
+
+                            <div class="skill">
+                                3D
+                            </div>
+
+                            <div class="skill">
+                                CREATIVE CONTENT
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOCIALS
+        ================================================== -->
+
+        <section id="socials">
+
+            <div class="container">
+
+                <div class="section-head reveal">
+
+                    <div>
+
+                        <div class="section-number">
+                            03 / SOCIALS
+                        </div>
+
+                        <h2 class="section-title">
+                            FIND ME.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        Follow my work and latest
+                        creative projects across
+                        my social platforms.
+
+                    </p>
+
+                </div>
+
+
+                <div class="socials">
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://instagram.com/YOUR_INSTAGRAM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social reveal"
+                    >
+
+                        <div class="social-top">
+
+                            <div class="social-icon">
+                                IG
+                            </div>
+
+                            <div class="social-number">
+                                
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="social-name">
+                                Instagram
+                            </div>
+
+                            <div class="social-handle">
+                                @YOUR_INSTAGRAM
+                            </div>
+
+                        </div>
+
+
+                        <div class="social-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+
+                    <!-- YOUTUBE -->
+
+                    <a
+                        href="https://youtube.com/@YOUR_YOUTUBE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social reveal"
+                    >
+
+                        <div class="social-top">
+
+                            <div class="social-icon">
+                                YT
+                            </div>
+
+                            <div class="social-number">
+                                
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="social-name">
+                                YouTube
+                            </div>
+
+                            <div class="social-handle">
+                                @YOUR_YOUTUBE
+                            </div>
+
+                        </div>
+
+
+                        <div class="social-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+
+                    <!-- TELEGRAM -->
+
+                    <a
+                        href="https://t.me/YOUR_TELEGRAM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social reveal"
+                    >
+
+                        <div class="social-top">
+
+                            <div class="social-icon">
+                                TG
+                            </div>
+
+                            <div class="social-number">
+                              
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="social-name">
+                                Telegram
+                            </div>
+
+                            <div class="social-handle">
+                                @YOUR_TELEGRAM
+                            </div>
+
+                        </div>
+
+
+                        <div class="social-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact">
+
+                    <div class="contact-content">
+
+                        <div class="contact-label">
+                            HAVE A PROJECT?
+                        </div>
+
+
+                        <h2 class="contact-title">
+
+                            LET'S
+
+                            <br>
+
+                            <span>
+                                TALK.
+                            </span>
+
+                        </h2>
+
+
+                        <a
+                            href="mailto:YOUR_EMAIL@example.com"
+                            class="email"
+                        >
+                            YOUR_EMAIL@example.com →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Z6IH<span>.</span>
+        </div>
+
+
+        <div class="footer-year">
+            © 2026 Z6IH. ALL RIGHTS RESERVED.
+        </div>
+
+
+        <div>
+            BUILT FOR CREATORS.
+        </div>
+
+    </footer>
 
 
 </body>
