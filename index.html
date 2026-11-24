@@ -1,3198 +1,1473 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Creative portfolio — Video Editing, Motion Design and Graphic Design."
-    >
-
-    <title>Z6IH. — Creative Portfolio</title>
-
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-
-    <!-- =====================================================
-         STYLE
-    ====================================================== -->
-
-    <style>
-
-        /* =====================================================
-           RESET
-        ====================================================== */
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-
-        body {
-            background: #090909;
-            color: #f4f4f0;
-            font-family: "Inter", sans-serif;
-            overflow-x: hidden;
-        }
-
-
-        img,
-        video {
-            display: block;
-            max-width: 100%;
-        }
-
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        button {
-            font-family: inherit;
-        }
-
-
-        :root {
-
-            --black: #090909;
-
-            --white: #f4f4f0;
-
-            --gray: #777;
-
-            --dark-gray: #151515;
-
-            --line: #292929;
-
-            --orange: #ff5a1f;
-
-            --max-width: 1450px;
-
-            --side-padding: 5%;
-
-            /* GAP BETWEEN PROJECTS */
-
-            --project-gap: 15px;
-        }
-
-
-        /* =====================================================
-           BACKGROUND
-        ====================================================== */
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: -10;
-
-            pointer-events: none;
-
-            opacity: .25;
-
-            background-image:
-
-                linear-gradient(
-                    rgba(255,255,255,.025) 1px,
-                    transparent 1px
-                ),
-
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,.025) 1px,
-                    transparent 1px
-                );
-
-            background-size: 55px 55px;
-        }
-
-
-        body::after {
-
-            content: "";
-
-            position: fixed;
-
-            width: 450px;
-
-            height: 450px;
-
-            border-radius: 50%;
-
-            background: var(--orange);
-
-            filter: blur(180px);
-
-            opacity: .07;
-
-            top: -250px;
-
-            right: -150px;
-
-            pointer-events: none;
-
-            z-index: -5;
-        }
-
-
-        /* =====================================================
-           TOP LINE
-        ====================================================== */
-
-        .top-line {
-
-            position: fixed;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 2px;
-
-            z-index: 2000;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #ff5a1f,
-                    #ffb000,
-                    #ff2e1f
-                );
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-        ====================================================== */
-
-        header {
-
-            position: fixed;
-
-            top: 2px;
-
-            left: 0;
-
-            width: 100%;
-
-            z-index: 1000;
-
-            background:
-                rgba(9, 9, 9, .88);
-
-            backdrop-filter: blur(18px);
-
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid var(--line);
-        }
-
-
-        .nav {
-
-            width: 100%;
-
-            max-width: var(--max-width);
-
-            height: 74px;
-
-            margin: auto;
-
-            padding:
-                0 var(--side-padding);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
-
-
-        .logo {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size: 25px;
-
-            font-weight: 700;
-
-            letter-spacing: -2px;
-        }
-
-
-        .logo span {
-            color: var(--orange);
-        }
-
-
-        .nav-menu {
-
-            display: none;
-
-            list-style: none;
-
-            align-items: center;
-
-            gap: 35px;
-        }
-
-
-        .nav-menu a {
-
-            color: #888;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-
-            transition:
-                color .3s ease;
-        }
-
-
-        .nav-menu a:hover {
-            color: white;
-        }
-
-
-        .nav-button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 11px 17px;
-
-            border: 1px solid #444;
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            transition:
-                background .3s ease,
-                color .3s ease,
-                border-color .3s ease;
-        }
-
-
-        .nav-button:hover {
-
-            background: white;
-
-            color: black;
-
-            border-color: white;
-        }
-
-
-        /* =====================================================
-           CONTAINER
-        ====================================================== */
-
-        .container {
-
-            width: 100%;
-
-            max-width: var(--max-width);
-
-            margin: auto;
-
-            padding-left: var(--side-padding);
-
-            padding-right: var(--side-padding);
-        }
-
-
-        /* =====================================================
-           HERO
-        ====================================================== */
-
-        .hero {
-
-            min-height: 100vh;
-
-            padding-top: 155px;
-
-            padding-bottom: 100px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            position: relative;
-        }
-
-
-        .hero-top {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            margin-bottom: 32px;
-        }
-
-
-        .hero-dot {
-
-            width: 7px;
-
-            height: 7px;
-
-            flex-shrink: 0;
-
-            border-radius: 50%;
-
-            background: var(--orange);
-
-            box-shadow:
-                0 0 15px var(--orange);
-
-            animation:
-                blink 1.5s infinite;
-        }
-
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: .3;
-            }
-        }
-
-
-        .hero-label {
-
-            color: #777;
-
-            font-size: 9px;
-
-            font-weight: 700;
-
-            letter-spacing: 2px;
-        }
-
-
-        .hero-title {
-
-            margin: 0;
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size:
-                clamp(64px, 15vw, 220px);
-
-            line-height: .78;
-
-            letter-spacing: -.105em;
-
-            font-weight: 700;
-        }
-
-
-        /* IMPORTANT:
-           Only use the supported WebKit property.
-           No "text-stroke" warning. */
-
-        .hero-title .outline {
-
-            color: transparent;
-
-            -webkit-text-stroke: 1px #777;
-        }
-
-
-        .hero-title .orange {
-            color: var(--orange);
-        }
-
-
-        .hero-bottom {
-
-            margin-top: 60px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: flex-start;
-
-            gap: 30px;
-        }
-
-
-        .hero-description {
-
-            max-width: 500px;
-
-            color: #888;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-
-
-        .hero-link {
-
-            width: max-content;
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 15px;
-
-            padding-bottom: 10px;
-
-            border-bottom: 1px solid #555;
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            transition:
-                color .3s ease,
-                border-color .3s ease;
-        }
-
-
-        .hero-link:hover {
-
-            color: var(--orange);
-
-            border-color: var(--orange);
-        }
-
-
-        .hero-link span {
-
-            font-size: 18px;
-
-            transition:
-                transform .3s ease;
-        }
-
-
-        .hero-link:hover span {
-            transform: translateY(4px);
-        }
-
-
-        /* =====================================================
-           SECTIONS
-        ====================================================== */
-
-        section {
-
-            padding-top: 120px;
-
-            padding-bottom: 120px;
-        }
-
-
-        .section-head {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 25px;
-
-            margin-bottom: 45px;
-        }
-
-
-        .section-number {
-
-            margin-bottom: 10px;
-
-            color: var(--orange);
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: 3px;
-        }
-
-
-        .section-title {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size:
-                clamp(50px, 10vw, 125px);
-
-            line-height: .8;
-
-            letter-spacing: -.09em;
-        }
-
-
-        .section-description {
-
-            max-width: 480px;
-
-            color: #777;
-
-            font-size: 12px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =====================================================
-           PROJECT GRID
-           
-           EXACTLY 5 PROJECTS
-           
-           001 AUTOMOTIVE
-           002 MODEL SHOOT
-           003 BRAND SHOOT
-           004 GRAPHIC DESIGNING
-           005 PROJECT FIVE
-        ====================================================== */
-
-        .projects {
-
-            display: grid;
-
-            grid-template-columns: 1fr;
-
-            gap: var(--project-gap);
-
-            margin-top: 15px;
-        }
-
-
-        .project {
-
-            display: block;
-
-            position: relative;
-
-            width: 100%;
-
-            aspect-ratio: 16 / 10;
-
-            overflow: hidden;
-
-            background: #111;
-
-            isolation: isolate;
-
-            border: 1px solid #202020;
-        }
-
-
-        /* VIDEO PROJECTS */
-
-        .project video {
-
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            opacity: .65;
-
-            transition:
-                transform .7s ease,
-                opacity .7s ease;
-        }
-
-
-        /* IMAGE PROJECTS */
-
-        .project img {
-
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            opacity: .72;
-
-            transition:
-                transform .7s ease,
-                opacity .7s ease;
-        }
-
-
-        .project:hover video {
-
-            transform: scale(1.07);
-
-            opacity: .95;
-        }
-
-
-        .project:hover img {
-
-            transform: scale(1.07);
-
-            opacity: .95;
-        }
-
-
-        .project::after {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 1;
-
-            pointer-events: none;
-
-            background:
-                linear-gradient(
-                    to top,
-                    rgba(0,0,0,.92),
-                    transparent 68%
-                );
-        }
-
-
-        .project-number {
-
-            position: absolute;
-
-            z-index: 3;
-
-            top: 17px;
-
-            left: 17px;
-
-            color: #999;
-
-            font-size: 8px;
-
-            font-weight: 700;
-
-            letter-spacing: 2px;
-        }
-
-
-        .project-info {
-
-            position: absolute;
-
-            z-index: 3;
-
-            left: 17px;
-
-            right: 17px;
-
-            bottom: 17px;
-
-            display: flex;
-
-            align-items: flex-end;
-
-            justify-content: space-between;
-
-            gap: 15px;
-        }
-
-
-        .project-category {
-
-            margin-bottom: 5px;
-
-            color: var(--orange);
-
-            font-size: 7px;
-
-            font-weight: 800;
-
-            letter-spacing: 2px;
-        }
-
-
-        .project-title {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size: 21px;
-
-            font-weight: 600;
-
-            line-height: 1;
-        }
-
-
-        .project-arrow {
-
-            width: 38px;
-
-            height: 38px;
-
-            flex-shrink: 0;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border: 1px solid #555;
-
-            font-size: 17px;
-
-            transition:
-                background .35s ease,
-                border-color .35s ease,
-                transform .35s ease;
-        }
-
-
-        .project:hover .project-arrow {
-
-            background: var(--orange);
-
-            border-color: var(--orange);
-
-            transform: rotate(45deg);
-        }
-
-
-        /* =====================================================
-           MARQUEE
-        ====================================================== */
-
-        .marquee {
-
-            width: 100%;
-
-            overflow: hidden;
-
-            padding: 20px 0;
-
-            margin: 40px 0;
-
-            border-top: 1px solid var(--line);
-
-            border-bottom: 1px solid var(--line);
-        }
-
-
-        .marquee-track {
-
-            display: flex;
-
-            width: max-content;
-
-            animation:
-                marquee 25s linear infinite;
-        }
-
-
-        .marquee-item {
-
-            padding-right: 50px;
-
-            color: #222;
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size:
-                clamp(35px, 7vw, 85px);
-
-            font-weight: 700;
-
-            letter-spacing: -.06em;
-
-            white-space: nowrap;
-        }
-
-
-        .marquee-item span {
-            color: var(--orange);
-        }
-
-
-        @keyframes marquee {
-
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-
-        /* =====================================================
-           ABOUT
-        ====================================================== */
-
-        .about-layout {
-
-            display: grid;
-
-            grid-template-columns: 1fr;
-
-            gap: 50px;
-        }
-
-
-        .about-big {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size:
-                clamp(35px, 7vw, 75px);
-
-            line-height: .95;
-
-            letter-spacing: -.07em;
-        }
-
-
-        .about-big span {
-            color: #444;
-        }
-
-
-        .about-text {
-
-            color: #777;
-
-            font-size: 13px;
-
-            line-height: 1.9;
-        }
-
-
-        .skills {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 7px;
-
-            margin-top: 30px;
-        }
-
-
-        .skill {
-
-            padding: 9px 12px;
-
-            border: 1px solid #333;
-
-            color: #888;
-
-            font-size: 7px;
-
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-        }
-
-
-        .skill:hover {
-
-            color: white;
-
-            border-color: var(--orange);
-        }
-
-
-        /* =====================================================
-           SOCIALS
-        ====================================================== */
-
-        .socials {
-
-            display: grid;
-
-            grid-template-columns: 1fr;
-
-            border-top: 1px solid var(--line);
-
-            border-left: 1px solid var(--line);
-        }
-
-
-        .social {
-
-            min-height: 150px;
-
-            padding: 25px;
-
-            position: relative;
-
-            overflow: hidden;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            border-right: 1px solid var(--line);
-
-            border-bottom: 1px solid var(--line);
-
-            transition:
-                background .4s ease;
-        }
-
-
-        .social:hover {
-            background: #111;
-        }
-
-
-        .social-top {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-        }
-
-
-        .social-icon {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size: 22px;
-
-            font-weight: 700;
-        }
-
-
-        .social-number {
-
-            color: #555;
-
-            font-size: 8px;
-
-            letter-spacing: 2px;
-        }
-
-
-        .social-name {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size: 25px;
-
-            font-weight: 600;
-        }
-
-
-        .social-handle {
-
-            margin-top: 5px;
-
-            color: #666;
-
-            font-size: 8px;
-        }
-
-
-        .social-arrow {
-
-            position: absolute;
-
-            right: 20px;
-
-            bottom: 20px;
-
-            color: #555;
-
-            font-size: 20px;
-
-            transition:
-                color .3s ease,
-                transform .3s ease;
-        }
-
-
-        .social:hover .social-arrow {
-
-            color: var(--orange);
-
-            transform:
-                translate(4px, -4px);
-        }
-
-
-        /* =====================================================
-           CONTACT
-        ====================================================== */
-
-        .contact {
-
-            position: relative;
-
-            overflow: hidden;
-
-            padding:
-                100px 0;
-
-            border-top: 1px solid var(--line);
-
-            border-bottom: 1px solid var(--line);
-        }
-
-
-        .contact::before {
-
-            content: "Z6IH.";
-
-            position: absolute;
-
-            right: -30px;
-
-            bottom: -60px;
-
-            color: #111;
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size:
-                clamp(150px, 35vw, 500px);
-
-            font-weight: 700;
-
-            line-height: .7;
-
-            letter-spacing: -.1em;
-
-            pointer-events: none;
-        }
-
-
-        .contact-content {
-
-            position: relative;
-
-            z-index: 5;
-        }
-
-
-        .contact-label {
-
-            margin-bottom: 25px;
-
-            color: var(--orange);
-
-            font-size: 9px;
-
-            font-weight: 800;
-
-            letter-spacing: 3px;
-        }
-
-
-        .contact-title {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size:
-                clamp(65px, 15vw, 190px);
-
-            line-height: .75;
-
-            letter-spacing: -.1em;
-        }
-
-
-        .contact-title span {
-            color: var(--orange);
-        }
-
-
-        .email {
-
-            display: inline-flex;
-
-            margin-top: 45px;
-
-            padding:
-                15px 20px;
-
-            border: 1px solid #444;
-
-            font-size: 10px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            transition:
-                background .3s ease,
-                color .3s ease,
-                border-color .3s ease;
-        }
-
-
-        .email:hover {
-
-            background: white;
-
-            color: black;
-
-            border-color: white;
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ====================================================== */
-
-        footer {
-
-            width: 100%;
-
-            max-width: var(--max-width);
-
-            margin: auto;
-
-            padding:
-                30px var(--side-padding);
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 10px;
-
-            color: #555;
-
-            font-size: 7px;
-
-            letter-spacing: 1px;
-        }
-
-
-        .footer-logo {
-
-            font-family:
-                "Space Grotesk",
-                sans-serif;
-
-            font-size: 20px;
-
-            font-weight: 700;
-
-            color: white;
-        }
-
-
-        .footer-logo span {
-            color: var(--orange);
-        }
-
-
-        /* =====================================================
-           REVEAL ANIMATION
-        ====================================================== */
-
-        .reveal {
-
-            opacity: 0;
-
-            transform:
-                translateY(35px);
-
-            transition:
-                opacity .8s ease,
-                transform .8s ease;
-        }
-
-
-        .reveal.visible {
-
-            opacity: 1;
-
-            transform:
-                translateY(0);
-        }
-
-
-        /* =====================================================
-           TABLET
-        ====================================================== */
-
-        @media (min-width: 650px) {
-
-            .hero-bottom {
-
-                flex-direction: row;
-
-                align-items: flex-end;
-
-                justify-content: space-between;
-            }
-
-
-            .projects {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-
-            .socials {
-
-                grid-template-columns:
-                    repeat(3, minmax(0, 1fr));
-            }
-
-
-            .about-layout {
-
-                grid-template-columns:
-                    minmax(0, 1.1fr)
-                    minmax(0, .9fr);
-
-                align-items: center;
-
-                gap: 80px;
-            }
-
-
-            footer {
-
-                flex-direction: row;
-
-                align-items: center;
-
-                justify-content: space-between;
-            }
-
-        }
-
-
-        /* =====================================================
-           DESKTOP
-        ====================================================== */
-
-        @media (min-width: 950px) {
-
-            .nav-menu {
-                display: flex;
-            }
-
-
-            .hero {
-                padding-top: 175px;
-            }
-
-
-            .section-head {
-
-                flex-direction: row;
-
-                align-items: flex-end;
-
-                justify-content: space-between;
-            }
-
-
-            .projects {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: var(--project-gap);
-            }
-
-
-            .project {
-                aspect-ratio: 16 / 10;
-            }
-
-
-            .contact {
-
-                padding-top: 170px;
-
-                padding-bottom: 170px;
-            }
-
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ====================================================== */
-
-        @media (max-width: 649px) {
-
-            :root {
-                --side-padding: 20px;
-            }
-
-
-            .nav {
-                height: 65px;
-            }
-
-
-            .nav-button {
-
-                padding:
-                    9px 12px;
-
-                font-size: 8px;
-            }
-
-
-            .hero {
-
-                min-height: 90vh;
-
-                padding-top: 125px;
-
-                padding-bottom: 80px;
-            }
-
-
-            .hero-title {
-
-                font-size:
-                    clamp(60px, 19vw, 120px);
-
-                letter-spacing:
-                    -.09em;
-            }
-
-
-            .hero-bottom {
-                margin-top: 45px;
-            }
-
-
-            .hero-description {
-
-                max-width: 100%;
-
-                font-size: 12px;
-            }
-
-
-            section {
-
-                padding-top: 80px;
-
-                padding-bottom: 80px;
-            }
-
-
-            .section-head {
-
-                margin-bottom: 30px;
-            }
-
-
-            .section-title {
-
-                font-size:
-                    clamp(52px, 15vw, 90px);
-            }
-
-
-            .section-description {
-                font-size: 11px;
-            }
-
-
-            /* Keep a small gap between projects */
-
-            .projects {
-                gap: 15px;
-            }
-
-
-            .project {
-
-                aspect-ratio: 16 / 10;
-            }
-
-
-            .project-info {
-
-                left: 14px;
-
-                right: 14px;
-
-                bottom: 14px;
-            }
-
-
-            .project-number {
-
-                top: 14px;
-
-                left: 14px;
-            }
-
-
-            .project-title {
-                font-size: 18px;
-            }
-
-
-            .about-layout {
-                gap: 40px;
-            }
-
-
-            .contact {
-                padding: 80px 0;
-            }
-
-
-            .contact::before {
-                font-size: 150px;
-            }
-
-        }
-
-
-        /* =====================================================
-           VERY SMALL PHONES
-        ====================================================== */
-
-        @media (max-width: 380px) {
-
-            .nav-button {
-
-                padding:
-                    8px 9px;
-
-                font-size: 7px;
-            }
-
-
-            .logo {
-                font-size: 22px;
-            }
-
-
-            .hero-title {
-                font-size: 57px;
-            }
-
-
-            .project-title {
-                font-size: 16px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Z6IH. Creative Portfolio — Video Editing, Motion Design and Graphic Design.">
+<title>Z6IH. — Creative Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==============================
+   COLOR PALETTE
+============================== */
+:root {
+    --bg: #080a14;
+    --surface: #101426;
+    --surface2: #151b31;
+    --white: #f3f4ff;
+    --muted: #9299b5;
+    --line: rgba(173,184,255,.13);
+    --purple: #9b7bff;
+    --blue: #53c8ff;
+    --gradient: linear-gradient(120deg,#a17aff,#55c9ff);
+    --max: 1450px;
+    --pad: 6%;
+    --gap: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img, video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+}
+
+::selection {
+    background: var(--purple);
+    color: white;
+}
+
+/* ==============================
+   BACKGROUND
+============================== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    opacity: .22;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size: 65px 65px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: -280px;
+    right: -180px;
+    border-radius: 50%;
+    background: var(--purple);
+    filter: blur(180px);
+    opacity: .14;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: var(--blue);
+    filter: blur(180px);
+    opacity: .08;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ==============================
+   TOP PROGRESS LINE
+============================== */
+.top-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    z-index: 2000;
+    background: var(--gradient);
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+header {
+    position: fixed;
+    top: 3px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8,10,20,.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+}
+
+.nav {
+    max-width: var(--max);
+    height: 82px;
+    padding: 0 var(--pad);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.logo span, .footer-logo span {
+    background: var(--gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.nav-menu {
+    display: none;
+    list-style: none;
+    gap: 38px;
+}
+
+.nav-menu a {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    transition: color .3s;
+}
+
+.nav-menu a:hover {
+    color: var(--blue);
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border: 1px solid rgba(161,122,255,.55);
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    transition: .3s;
+}
+
+.nav-button:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: #080a14;
+}
+
+/* ==============================
+   CONTAINER
+============================== */
+.container {
+    width: 100%;
+    max-width: var(--max);
+    margin: auto;
+    padding: 0 var(--pad);
+}
+
+/* ==============================
+   HERO
+============================== */
+.hero {
+    min-height: 100vh;
+    padding-top: 160px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 38px;
+}
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6ee7bd;
+    box-shadow: 0 0 15px #6ee7bd;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: .3; }
+}
+
+.hero-label {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(75px,14vw,205px);
+    line-height: .82;
+    letter-spacing: -.105em;
+    font-weight: 700;
+}
+
+.hero-title .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #8f91b6;
+}
+
+.hero-title .gradient-text {
+    background: var(--gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero-bottom {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.hero-description {
+    max-width: 460px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    transition: .3s;
+}
+
+.hero-link:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.hero-link span {
+    font-size: 20px;
+    transition: transform .3s;
+}
+
+.hero-link:hover span {
+    transform: translateY(5px);
+}
+
+/* ==============================
+   SECTION HEADINGS
+============================== */
+section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 55px;
+}
+
+.section-number {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(55px,10vw,125px);
+    line-height: .85;
+    letter-spacing: -.09em;
+}
+
+.section-description {
+    max-width: 420px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* ==============================
+   PROJECT GRID
+============================== */
+.projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+}
+
+.project {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--surface);
+    isolation: isolate;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+}
+
+.project video,
+.project img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .78;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .6s;
+}
+
+.project:hover video,
+.project:hover img {
+    transform: scale(1.07);
+    opacity: 1;
+}
+
+.project::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        rgba(5,7,18,.98),
+        rgba(5,7,18,.1) 75%
+    );
+}
+
+.project-number {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(8,10,20,.65);
+    backdrop-filter: blur(10px);
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.project-info {
+    position: absolute;
+    z-index: 3;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.project-category {
+    margin-bottom: 9px;
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.project-title {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(20px,3vw,29px);
+    font-weight: 600;
+    line-height: 1;
+}
+
+.project-arrow {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    font-size: 19px;
+    transition: .4s;
+}
+
+.project:hover .project-arrow {
+    background: var(--gradient);
+    border-color: transparent;
+    color: #080a14;
+    transform: rotate(45deg);
+}
+
+/* ==============================
+   MARQUEE
+============================== */
+.marquee {
+    overflow: hidden;
+    padding: 27px 0;
+    margin: 35px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 28s linear infinite;
+}
+
+.marquee-item {
+    padding-right: 55px;
+    color: #333953;
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(40px,7vw,90px);
+    font-weight: 700;
+    letter-spacing: -.06em;
+    white-space: nowrap;
+}
+
+.marquee-item span {
+    color: var(--purple);
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* ==============================
+   ABOUT
+============================== */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
+}
+
+.about-big {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(38px,7vw,78px);
+    line-height: .98;
+    letter-spacing: -.07em;
+}
+
+.about-big span {
+    color: #626b8e;
+}
+
+.about-text {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 30px;
+}
+
+.skill {
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: rgba(255,255,255,.025);
+    color: #b4b9d0;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    transition: .3s;
+}
+
+.skill:hover {
+    border-color: var(--purple);
+    color: white;
+    background: rgba(155,123,255,.1);
+}
+
+/* ==============================
+   SOCIAL CARDS
+============================== */
+.socials {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.social {
+    min-height: 170px;
+    padding: 27px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255,255,255,.015);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background .4s;
+}
+
+.social:hover {
+    background: rgba(155,123,255,.09);
+}
+
+.social-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-icon {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    background: var(--gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.social-number {
+    color: #59617e;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.social-name {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.social-handle {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.social-arrow {
+    position: absolute;
+    right: 25px;
+    bottom: 27px;
+    color: #79809d;
+    font-size: 22px;
+    transition: .3s;
+}
+
+.social:hover .social-arrow {
+    color: var(--blue);
+    transform: translate(5px,-5px);
+}
+
+/* ==============================
+   CONTACT
+============================== */
+.contact {
+    position: relative;
+    overflow: hidden;
+    padding: 110px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background:
+        radial-gradient(ellipse at 80% 80%,rgba(155,123,255,.12),transparent 50%),
+        radial-gradient(ellipse at 10% 10%,rgba(83,200,255,.08),transparent 50%);
+}
+
+.contact::before {
+    content: "Z6IH.";
+    position: absolute;
+    right: -20px;
+    bottom: -55px;
+    color: rgba(145,153,201,.045);
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(150px,35vw,500px);
+    font-weight: 700;
+    line-height: .7;
+    letter-spacing: -.1em;
+    pointer-events: none;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 5;
+}
+
+.contact-label {
+    margin-bottom: 30px;
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.contact-title {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: clamp(75px,15vw,190px);
+    line-height: .78;
+    letter-spacing: -.1em;
+}
+
+.contact-title span {
+    background: var(--gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.email {
+    display: inline-flex;
+    margin-top: 50px;
+    padding: 17px 23px;
+    border: 1px solid rgba(155,123,255,.6);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.email:hover {
+    background: var(--gradient);
+    color: #080a14;
+    border-color: transparent;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+    max-width: var(--max);
+    margin: auto;
+    padding: 35px var(--pad);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: #707895;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+}
+
+.footer-logo {
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: white;
+}
+
+/* ==============================
+   SCROLL REVEAL
+============================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==============================
+   TABLET
+============================== */
+@media (min-width: 650px) {
+    .hero-bottom {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .socials {
+        grid-template-columns: repeat(3,minmax(0,1fr));
+    }
+
+    .about-layout {
+        grid-template-columns: 1.1fr .9fr;
+        align-items: center;
+        gap: 75px;
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* ==============================
+   DESKTOP
+============================== */
+@media (min-width: 950px) {
+    .nav-menu {
+        display: flex;
+    }
+
+    .hero {
+        padding-top: 180px;
+    }
+
+    .section-head {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .contact {
+        padding-top: 165px;
+        padding-bottom: 165px;
+    }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+@media (max-width: 649px) {
+    :root {
+        --pad: 20px;
+        --gap: 13px;
+    }
+
+    .nav {
+        height: 68px;
+    }
+
+    .nav-button {
+        padding: 10px 13px;
+        font-size: 8px;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+
+    .hero-title {
+        font-size: clamp(59px,18vw,115px);
+        letter-spacing: -.09em;
+    }
+
+    .hero-bottom {
+        margin-top: 45px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    section {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .section-title {
+        font-size: clamp(52px,15vw,90px);
+    }
+
+    .section-head {
+        margin-bottom: 32px;
+    }
+
+    .section-description {
+        font-size: 11px;
+    }
+
+    .project {
+        aspect-ratio: 16/10;
+    }
+
+    .project-info {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .project-number {
+        top: 13px;
+        left: 13px;
+    }
+
+    .project-title {
+        font-size: 18px;
+    }
+
+    .project-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .about-layout {
+        gap: 40px;
+    }
+
+    .contact {
+        padding: 85px 0;
+    }
+
+    .contact::before {
+        font-size: 160px;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-button {
+        padding: 9px;
+        font-size: 7px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<script>
+/* ==========================================
+   EDIT YOUR WEBSITE INFORMATION HERE
+========================================== */
+
+const SITE = {
+
+    logo: "Z6IH.",
+    email: "YOUR_EMAIL@example.com",
+
+    heroLabel: "AVAILABLE FOR CREATIVE PROJECTS",
+
+    heroDescription:
+        "Z6IH. is my digital playground for video editing, motion graphics, visual design and creative experiments.",
+
+    /* PROJECT 1 */
+    project1: {
+        type: "video",
+        file: "UPLOAD-V.mp4",
+        link: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
+        category: "VIDEO / EDITING",
+        title: "AUTOMOTIVE"
+    },
+
+    /* PROJECT 2 */
+    project2: {
+        type: "video",
+        file: "website11.mp4",
+        link: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
+        category: "VIDEO / EDITING",
+        title: "MODEL SHOOT"
+    },
+
+    /* PROJECT 3 */
+    project3: {
+        type: "video",
+        file: "UPLOAD-NI.mp4",
+        link: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
+        category: "VIDEO / EDITING",
+        title: "BRAND SHOOT"
+    },
+
+    /* PROJECT 4 */
+    project4: {
+        type: "image",
+        file: "WEBSITE POSTER.jpg",
+        link: "#",
+        category: "DESIGNING",
+        title: "GRAPHIC DESIGNING",
+        alt: "Graphic Designing Project"
+    },
+
+    /* PROJECT 5 */
+    project5: {
+        type: "image",
+        file: "UPLOAD ASSISTANCE.png",
+        link: "#",
+        category: "FREE SERVICE",
+        title: "UPLOAD ASSISTANCE",
+        alt: "Upload Assistance Project"
+    },
+
+    /* SOCIAL MEDIA */
+    instagram: "https://www.instagram.com/_z6ih__?stkn=NHlyc2ZyMnp6bnNp",
+    youtube: "",
+    telegram: "https://t.me/Z6IH_softwaresandresources",
+
+    instagramHandle: "@Z6IH",
+    youtubeHandle: "@YOUR_YOUTUBE",
+    telegramHandle: "@Z6IH"
+};
+
+
+/* ==========================================
+   WEBSITE FUNCTIONALITY
+   DO NOT EDIT BELOW THIS LINE
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    /* LOGO */
+    document.querySelectorAll(".logo, .footer-logo").forEach(el => {
+        const parts = SITE.logo.split(".");
+        el.textContent = "";
+        el.append(document.createTextNode(parts[0]));
+        const span = document.createElement("span");
+        span.textContent = parts.slice(1).join(".");
+        el.append(span);
+    });
+
+    /* HERO */
+    document.querySelector(".hero-label").textContent = SITE.heroLabel;
+    document.querySelector(".hero-description").textContent = SITE.heroDescription;
+
+    /* PROJECTS */
+    const projects = [
+        SITE.project1,
+        SITE.project2,
+        SITE.project3,
+        SITE.project4,
+        SITE.project5
+    ];
 
-    <!-- =====================================================
-         =====================================================
-         ✏️ EDIT YOUR WEBSITE HERE
-         =====================================================
+    document.querySelectorAll(".project").forEach((element, index) => {
 
-         You can change your project information here.
+        const data = projects[index];
+        if (!data) return;
 
-         PROJECT 1 = VIDEO
-         PROJECT 2 = VIDEO
-         PROJECT 3 = VIDEO
-         PROJECT 4 = IMAGE
-         PROJECT 5 = IMAGE
+        element.href = data.link;
 
-         =====================================================
-    ====================================================== -->
+        if (data.link && data.link.startsWith("http")) {
+            element.target = "_blank";
+            element.rel = "noopener noreferrer";
+        } else {
+            element.removeAttribute("target");
+        }
 
-    <script>
+        element.querySelector(".project-category").textContent = data.category;
+        element.querySelector(".project-title").textContent = data.title;
+        element.querySelector(".project-number").textContent =
+            String(index + 1).padStart(3, "0");
 
-        const SITE = {
+        /* VIDEO */
+        if (data.type === "video") {
 
+            element.querySelector("img")?.remove();
 
-            /* =================================================
-               BASIC INFORMATION
-            ================================================= */
+            let video = element.querySelector("video");
 
-            logo:
-                "Z6IH.",
-
-            email:
-                "YOUR_EMAIL@example.com",
-
-
-            /* =================================================
-               HERO
-            ================================================= */
-
-            heroLabel:
-                "AVAILABLE FOR CREATIVE PROJECTS",
-
-            heroDescription:
-                "Z6IH. is my digital playground for video editing, motion graphics, visual design and creative experiments.",
-
-
-            /* =================================================
-               PROJECT 1
-               AUTOMOTIVE — VIDEO
-            ================================================= */
-
-            project1: {
-
-                type:
-                    "video",
-
-                file:
-                    "UPLOAD-V.mp4",
-
-                link:
-                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
-
-                category:
-                    "VIDEO / EDITING",
-
-                title:
-                    "AUTOMOTIVE"
-
-            },
-
-
-            /* =================================================
-               PROJECT 2
-               MODEL SHOOT — VIDEO
-            ================================================= */
-
-            project2: {
-
-                type:
-                    "video",
-
-                file:
-                    "website11.mp4",
-
-                link:
-                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
-
-                category:
-                    "VIDEO / EDITING",
-
-                title:
-                    "MODEL SHOOT"
-
-            },
-
-
-            /* =================================================
-               PROJECT 3
-               BRAND SHOOT — VIDEO
-            ================================================= */
-
-            project3: {
-
-                type:
-                    "video",
-
-                file:
-                    "UPLOAD-NI.mp4",
-
-                link:
-                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
-
-                category:
-                    "VIDEO / EDITING",
-
-                title:
-                    "BRAND SHOOT"
-
-            },
-
-
-            /* =================================================
-               PROJECT 4
-               GRAPHIC DESIGNING — IMAGE
-            ================================================= */
-
-            project4: {
-
-                type:
-                    "image",
-
-                file:
-                    "WEBSITE POSTER.jpg",
-
-                link:
-                    "#",
-
-                category:
-                    "DESIGNING",
-
-                title:
-                    "GRAPHIC DESIGNING",
-
-                alt:
-                    "Graphic Designing Project"
-
-            },
-
-
-            /* =================================================
-               PROJECT 5
-               IMAGE
-            ================================================= */
-
-            project5: {
-
-                type:
-                    "image",
-
-                file:
-                    "UPLOAD ASSISTANCE.png",
-
-                link:
-                    "#",
-
-                category:
-                    "FREE SERVICE",
-
-                title:
-                    "UPLOAD ASSISTANCE",
-
-                alt:
-                    "Project Five"
-
-            },
-
-
-            /* =================================================
-               SOCIAL MEDIA
-            ================================================= */
-
-            instagram:
-                "https://www.instagram.com/_z6ih__?stkn=NHlyc2ZyMnp6bnNp",
-
-            youtube:
-                "",
-
-            telegram:
-                "https://t.me/Z6IH_softwaresandresources",
-
-
-            instagramHandle:
-                "@Z6IH",
-
-            youtubeHandle:
-                "@YOUR_YOUTUBE",
-
-            telegramHandle:
-                "@Z6IH"
-
-
-        };
-
-
-        /* =====================================================
-           =====================================================
-           DO NOT EDIT BELOW THIS LINE
-           =====================================================
-        ====================================================== */
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-
-                /* =================================================
-                   LOGO
-                ================================================= */
-
-                document.querySelectorAll(
-                    ".logo, .footer-logo"
-                ).forEach(
-                    function (element) {
-
-                        element.innerHTML =
-                            SITE.logo.replace(
-                                ".",
-                                "<span>.</span>"
-                            );
-
-                    }
-                );
-
-
-                /* =================================================
-                   HERO TEXT
-                ================================================= */
-
-                const heroLabel =
-                    document.querySelector(
-                        ".hero-label"
-                    );
-
-
-                if (heroLabel) {
-
-                    heroLabel.textContent =
-                        SITE.heroLabel;
-
-                }
-
-
-                const heroDescription =
-                    document.querySelector(
-                        ".hero-description"
-                    );
-
-
-                if (heroDescription) {
-
-                    heroDescription.textContent =
-                        SITE.heroDescription;
-
-                }
-
-
-                /* =================================================
-                   PROJECT DATA
-                ================================================= */
-
-                const projects = [
-
-                    SITE.project1,
-
-                    SITE.project2,
-
-                    SITE.project3,
-
-                    SITE.project4,
-
-                    SITE.project5
-
-                ];
-
-
-                const projectElements =
-                    document.querySelectorAll(
-                        ".project"
-                    );
-
-
-                projectElements.forEach(
-                    function (element, index) {
-
-                        const data =
-                            projects[index];
-
-
-                        if (!data) {
-                            return;
-                        }
-
-
-                        /* -----------------------------------------
-                           PROJECT LINK
-                        ------------------------------------------ */
-
-                        element.href =
-                            data.link;
-
-
-                        /* -----------------------------------------
-                           CATEGORY
-                        ------------------------------------------ */
-
-                        const category =
-                            element.querySelector(
-                                ".project-category"
-                            );
-
-
-                        if (category) {
-
-                            category.textContent =
-                                data.category;
-
-                        }
-
-
-                        /* -----------------------------------------
-                           TITLE
-                        ------------------------------------------ */
-
-                        const title =
-                            element.querySelector(
-                                ".project-title"
-                            );
-
-
-                        if (title) {
-
-                            title.textContent =
-                                data.title;
-
-                        }
-
-
-                        /* -----------------------------------------
-                           NUMBER
-                        ------------------------------------------ */
-
-                        const number =
-                            element.querySelector(
-                                ".project-number"
-                            );
-
-
-                        if (number) {
-
-                            number.textContent =
-                                String(
-                                    index + 1
-                                ).padStart(
-                                    3,
-                                    "0"
-                                );
-
-                        }
-
-
-                        /* -----------------------------------------
-                           VIDEO PROJECT
-                        ------------------------------------------ */
-
-                        if (
-                            data.type ===
-                            "video"
-                        ) {
-
-                            const oldImage =
-                                element.querySelector(
-                                    "img"
-                                );
-
-
-                            if (oldImage) {
-                                oldImage.remove();
-                            }
-
-
-                            let video =
-                                element.querySelector(
-                                    "video"
-                                );
-
-
-                            if (!video) {
-
-                                video =
-                                    document.createElement(
-                                        "video"
-                                    );
-
-                                element.prepend(
-                                    video
-                                );
-
-                            }
-
-
-                            video.src =
-                                data.file;
-
-                            video.autoplay =
-                                true;
-
-                            video.muted =
-                                true;
-
-                            video.loop =
-                                true;
-
-                            video.playsInline =
-                                true;
-
-                            video.preload =
-                                "metadata";
-
-                        }
-
-
-                        /* -----------------------------------------
-                           IMAGE PROJECT
-                        ------------------------------------------ */
-
-                        if (
-                            data.type ===
-                            "image"
-                        ) {
-
-                            const oldVideo =
-                                element.querySelector(
-                                    "video"
-                                );
-
-
-                            if (oldVideo) {
-                                oldVideo.remove();
-                            }
-
-
-                            let image =
-                                element.querySelector(
-                                    "img"
-                                );
-
-
-                            if (!image) {
-
-                                image =
-                                    document.createElement(
-                                        "img"
-                                    );
-
-                                element.prepend(
-                                    image
-                                );
-
-                            }
-
-
-                            image.src =
-                                data.file;
-
-                            image.alt =
-                                data.alt ||
-                                data.title;
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   SOCIAL LINKS
-                ================================================= */
-
-                const socials =
-                    document.querySelectorAll(
-                        ".social"
-                    );
-
-
-                if (socials[0]) {
-
-                    socials[0].href =
-                        SITE.instagram;
-
-                    socials[0].querySelector(
-                        ".social-handle"
-                    ).textContent =
-                        SITE.instagramHandle;
-
-                }
-
-
-                if (socials[1]) {
-
-                    socials[1].href =
-                        SITE.youtube;
-
-                    socials[1].querySelector(
-                        ".social-handle"
-                    ).textContent =
-                        SITE.youtubeHandle;
-
-                }
-
-
-                if (socials[2]) {
-
-                    socials[2].href =
-                        SITE.telegram;
-
-                    socials[2].querySelector(
-                        ".social-handle"
-                    ).textContent =
-                        SITE.telegramHandle;
-
-                }
-
-
-                /* =================================================
-                   EMAIL
-                ================================================= */
-
-                const email =
-                    document.querySelector(
-                        ".email"
-                    );
-
-
-                if (email) {
-
-                    email.href =
-                        "mailto:" +
-                        SITE.email;
-
-                    email.textContent =
-                        SITE.email +
-                        " →";
-
-                }
-
-
-                /* =================================================
-                   FOOTER YEAR
-                ================================================= */
-
-                const footerYear =
-                    document.querySelector(
-                        ".footer-year"
-                    );
-
-
-                if (footerYear) {
-
-                    footerYear.textContent =
-                        "© " +
-                        new Date().getFullYear() +
-                        " " +
-                        SITE.logo +
-                        " ALL RIGHTS RESERVED.";
-
-                }
-
-
-                /* =================================================
-                   SCROLL REVEAL
-                ================================================= */
-
-                const revealElements =
-                    document.querySelectorAll(
-                        ".reveal"
-                    );
-
-
-                const revealObserver =
-                    new IntersectionObserver(
-
-                        function (entries) {
-
-                            entries.forEach(
-                                function (entry) {
-
-                                    if (
-                                        entry.isIntersecting
-                                    ) {
-
-                                        entry.target.classList.add(
-                                            "visible"
-                                        );
-
-                                        revealObserver.unobserve(
-                                            entry.target
-                                        );
-
-                                    }
-
-                                }
-                            );
-
-                        },
-
-                        {
-                            threshold: 0.08
-                        }
-
-                    );
-
-
-                revealElements.forEach(
-                    function (element) {
-
-                        revealObserver.observe(
-                            element
-                        );
-
-                    }
-                );
-
-
-                /* =================================================
-                   VIDEO PLAY / PAUSE
-                ================================================= */
-
-                const videos =
-                    document.querySelectorAll(
-                        "video"
-                    );
-
-
-                videos.forEach(
-                    function (video) {
-
-                        video.muted =
-                            true;
-
-                        video.setAttribute(
-                            "playsinline",
-                            ""
-                        );
-
-                    }
-                );
-
-
-                const videoObserver =
-                    new IntersectionObserver(
-
-                        function (entries) {
-
-                            entries.forEach(
-                                function (entry) {
-
-                                    const video =
-                                        entry.target;
-
-
-                                    if (
-                                        entry.isIntersecting
-                                    ) {
-
-                                        video
-                                            .play()
-                                            .catch(
-                                                function () {}
-                                            );
-
-                                    } else {
-
-                                        video.pause();
-
-                                    }
-
-                                }
-                            );
-
-                        },
-
-                        {
-                            threshold: 0.15
-                        }
-
-                    );
-
-
-                videos.forEach(
-                    function (video) {
-
-                        videoObserver.observe(
-                            video
-                        );
-
-                    }
-                );
-
-
-                /* =================================================
-                   SMOOTH INTERNAL LINKS
-                ================================================= */
-
-                document.querySelectorAll(
-                    'a[href^="#"]'
-                ).forEach(
-                    function (link) {
-
-                        link.addEventListener(
-                            "click",
-                            function (event) {
-
-                                const target =
-                                    document.querySelector(
-                                        this.getAttribute(
-                                            "href"
-                                        )
-                                    );
-
-
-                                if (!target) {
-                                    return;
-                                }
-
-
-                                event.preventDefault();
-
-
-                                const offset =
-                                    85;
-
-
-                                const position =
-                                    target.getBoundingClientRect()
-                                        .top +
-                                    window.scrollY -
-                                    offset;
-
-
-                                window.scrollTo({
-
-                                    top:
-                                        position,
-
-                                    behavior:
-                                        "smooth"
-
-                                });
-
-                            }
-                        );
-
-                    }
-                );
-
+            if (!video) {
+                video = document.createElement("video");
+                element.prepend(video);
             }
-        );
 
-    </script>
+            video.src = data.file;
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.preload = "metadata";
+            video.setAttribute("playsinline", "");
 
+        }
 
-    <!-- =====================================================
-         TOP LINE
-    ====================================================== -->
+        /* IMAGE */
+        if (data.type === "image") {
 
-    <div class="top-line"></div>
+            element.querySelector("video")?.remove();
 
+            let img = element.querySelector("img");
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+            if (!img) {
+                img = document.createElement("img");
+                element.prepend(img);
+            }
 
-    <header>
+            img.src = data.file;
+            img.alt = data.alt || data.title;
+        }
+    });
 
-        <nav class="nav">
+    /* SOCIAL LINKS */
+    const socials = document.querySelectorAll(".social");
 
-            <a
-                href="#home"
-                class="logo"
-            >
-                Z6IH<span>.</span>
-            </a>
+    const socialData = [
+        [SITE.instagram, SITE.instagramHandle],
+        [SITE.youtube, SITE.youtubeHandle],
+        [SITE.telegram, SITE.telegramHandle]
+    ];
 
+    socials.forEach((el, index) => {
+        const [url, handle] = socialData[index];
 
-            <ul class="nav-menu">
+        el.href = url || "#";
+        el.querySelector(".social-handle").textContent = handle;
 
-                <li>
-                    <a href="#work">
-                        WORK
-                    </a>
-                </li>
+        if (url) {
+            el.target = "_blank";
+            el.rel = "noopener noreferrer";
+        } else {
+            el.removeAttribute("target");
+        }
+    });
 
-                <li>
-                    <a href="#about">
-                        ABOUT
-                    </a>
-                </li>
+    /* EMAIL */
+    const email = document.querySelector(".email");
+    email.href = "mailto:" + SITE.email;
+    email.textContent = SITE.email + " →";
 
-                <li>
-                    <a href="#socials">
-                        SOCIALS
-                    </a>
-                </li>
+    /* FOOTER YEAR */
+    document.querySelector(".footer-year").textContent =
+        "© " + new Date().getFullYear() + " " +
+        SITE.logo + " ALL RIGHTS RESERVED.";
 
-            </ul>
+    /* SCROLL REVEAL */
+    const revealElements = document.querySelectorAll(".reveal");
 
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
 
-            <a
-                href="#contact"
-                class="nav-button"
-            >
-                CONTACT →
-            </a>
+    revealElements.forEach(el => revealObserver.observe(el));
 
-        </nav>
+    /* VIDEO PLAY / PAUSE */
+    const videos = document.querySelectorAll(".project video");
 
-    </header>
+    const videoObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const video = entry.target;
 
+            if (entry.isIntersecting) {
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.15 });
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
+    videos.forEach(video => {
+        video.muted = true;
+        video.setAttribute("playsinline", "");
+        videoObserver.observe(video);
+    });
 
-    <main id="home">
+    /* INTERNAL SMOOTH LINKS */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function(event) {
 
+            const href = this.getAttribute("href");
+            if (!href || href === "#") return;
 
-        <!-- =================================================
-             HERO
-        ================================================== -->
+            const target = document.querySelector(href);
+            if (!target) return;
 
+            event.preventDefault();
+
+            const position =
+                target.getBoundingClientRect().top +
+                window.scrollY - 85;
+
+            window.scrollTo({
+                top: position,
+                behavior: "smooth"
+            });
+        });
+    });
+
+});
+</script>
+
+<div class="top-line"></div>
+
+<header>
+    <nav class="nav">
+
+        <a href="#home" class="logo">Z6IH<span>.</span></a>
+
+        <ul class="nav-menu">
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#socials">SOCIALS</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-button">CONTACT ↗</a>
+
+    </nav>
+</header>
+
+<main id="home">
+
+    <!-- HERO -->
+    <div class="container">
+        <section class="hero">
+
+            <div class="glow" style="right:0;top:30%;"></div>
+
+            <div class="hero-top">
+                <div class="hero-dot"></div>
+                <div class="hero-label">AVAILABLE FOR CREATIVE PROJECTS</div>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="outline">MAKE</span><br>
+                <span class="gradient-text">NOISE.</span><br>
+                VISUALLY.
+            </h1>
+
+            <div class="hero-bottom">
+
+                <p class="hero-description">
+                    Z6IH. is my digital playground for video editing,
+                    motion graphics, visual design and creative experiments.
+                </p>
+
+                <a href="#work" class="hero-link">
+                    EXPLORE THE WORK <span>↓</span>
+                </a>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- WORK -->
+    <section id="work">
         <div class="container">
 
-            <section class="hero">
-
-                <div class="hero-top">
-
-                    <div class="hero-dot"></div>
-
-                    <div class="hero-label">
-                        AVAILABLE FOR CREATIVE PROJECTS
-                    </div>
-
+            <div class="section-head reveal">
+                <div>
+                    <div class="section-number">01 / SELECTED WORK</div>
+                    <h2 class="section-title">WORK.</h2>
                 </div>
 
+                <p class="section-description">
+                    A selection of my video editing, creative design
+                    and visual work.
+                </p>
+            </div>
 
-                <h1 class="hero-title">
+            <div class="projects">
 
-                    <span class="outline">
-                        MAKE
-                    </span>
+                <!-- PROJECT 001 -->
+                <a href="#" class="project reveal">
+                    <video src="UPLOAD-V.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                    <div class="project-number">001</div>
+                    <div class="project-info">
+                        <div>
+                            <div class="project-category">VIDEO / EDITING</div>
+                            <div class="project-title">AUTOMOTIVE</div>
+                        </div>
+                        <div class="project-arrow">↗</div>
+                    </div>
+                </a>
 
-                    <br>
+                <!-- PROJECT 002 -->
+                <a href="#" class="project reveal">
+                    <video src="website11.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                    <div class="project-number">002</div>
+                    <div class="project-info">
+                        <div>
+                            <div class="project-category">VIDEO / EDITING</div>
+                            <div class="project-title">MODEL SHOOT</div>
+                        </div>
+                        <div class="project-arrow">↗</div>
+                    </div>
+                </a>
 
-                    <span class="orange">
-                        NOISE.
-                    </span>
+                <!-- PROJECT 003 -->
+                <a href="#" class="project reveal">
+                    <video src="UPLOAD-NI.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                    <div class="project-number">003</div>
+                    <div class="project-info">
+                        <div>
+                            <div class="project-category">VIDEO / EDITING</div>
+                            <div class="project-title">BRAND SHOOT</div>
+                        </div>
+                        <div class="project-arrow">↗</div>
+                    </div>
+                </a>
 
-                    <br>
+                <!-- PROJECT 004 -->
+                <a href="#" class="project reveal">
+                    <img src="WEBSITE POSTER.jpg" alt="Graphic Designing Project">
+                    <div class="project-number">004</div>
+                    <div class="project-info">
+                        <div>
+                            <div class="project-category">DESIGNING</div>
+                            <div class="project-title">GRAPHIC DESIGNING</div>
+                        </div>
+                        <div class="project-arrow">↗</div>
+                    </div>
+                </a>
 
-                    <span>
-                        VISUALLY.
-                    </span>
+                <!-- PROJECT 005 -->
+                <a href="#" class="project reveal">
+                    <img src="UPLOAD ASSISTANCE.png" alt="Upload Assistance Project">
+                    <div class="project-number">005</div>
+                    <div class="project-info">
+                        <div>
+                            <div class="project-category">FREE SERVICE</div>
+                            <div class="project-title">UPLOAD ASSISTANCE</div>
+                        </div>
+                        <div class="project-arrow">↗</div>
+                    </div>
+                </a>
 
-                </h1>
+            </div>
+        </div>
+    </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-track">
 
-                <div class="hero-bottom">
+            <div class="marquee-item">
+                CREATE <span>✳</span> EDIT <span>✳</span> DESIGN <span>✳</span>
+                CREATE <span>✳</span> EDIT <span>✳</span> DESIGN <span>✳</span>
+            </div>
 
-                    <p class="hero-description">
-                        Z6IH. is my digital playground
-                        for video editing, motion graphics,
-                        visual design and creative experiments.
+            <div class="marquee-item">
+                CREATE <span>✳</span> EDIT <span>✳</span> DESIGN <span>✳</span>
+                CREATE <span>✳</span> EDIT <span>✳</span> DESIGN <span>✳</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+
+            <div class="section-head reveal">
+                <div>
+                    <div class="section-number">02 / ABOUT</div>
+                    <h2 class="section-title">WHO.</h2>
+                </div>
+            </div>
+
+            <div class="about-layout reveal">
+
+                <div>
+                    <h3 class="about-big">
+                        IDEAS ARE <span>CHEAP.</span><br>
+                        EXECUTION <span>ISN'T.</span>
+                    </h3>
+                </div>
+
+                <div>
+                    <p class="about-text">
+                        Z6IH. is a personal creative portfolio focused on
+                        making digital content that grabs attention.
+
+                        <br><br>
+
+                        From video editing and motion graphics to visual
+                        design and experimental content, this is where
+                        ideas become visuals.
+
+                        <br><br>
+
+                        The goal is simple: Make something people remember.
                     </p>
 
-
-                    <a
-                        href="#work"
-                        class="hero-link"
-                    >
-
-                        EXPLORE THE WORK
-
-                        <span>
-                            ↓
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </section>
-
-        </div>
-
-
-        <!-- =================================================
-             WORK
-             
-             ONLY 5 PROJECTS.
-             
-             NO FEATURED PROJECT.
-        ================================================== -->
-
-        <section id="work">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <div class="section-number">
-                            01 / SELECTED WORK
-                        </div>
-
-                        <h2 class="section-title">
-                            WORK.
-                        </h2>
-
+                    <div class="skills">
+                        <div class="skill">VIDEO EDITING</div>
+                        <div class="skill">MOTION DESIGN</div>
+                        <div class="skill">GRAPHIC DESIGN</div>
+                        <div class="skill">VFX</div>
+                        <div class="skill">3D</div>
+                        <div class="skill">CREATIVE CONTENT</div>
                     </div>
-
-
-                    <p class="section-description">
-
-                        A selection of my video editing,
-                        creative design and visual work.
-
-                    </p>
-
-                </div>
-
-
-                <!-- =================================================
-                     PROJECT GRID
-                ================================================== -->
-
-                <div class="projects">
-
-
-                    <!-- =============================================
-                         PROJECT 001 — AUTOMOTIVE
-                    ============================================== -->
-
-                    <a
-                        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project reveal"
-                    >
-
-                        <video
-                            src="YELLOW GRADE.mp4"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        ></video>
-
-
-                        <div class="project-number">
-                            
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div>
-
-                                <div class="project-category">
-                                    VIDEO / EDITING
-                                </div>
-
-                                <div class="project-title">
-                                    AUTOMOTIVE
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- =============================================
-                         PROJECT 002 — MODEL SHOOT
-                    ============================================== -->
-
-                    <a
-                        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project reveal"
-                    >
-
-                        <video
-                            src="website11.mp4"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        ></video>
-
-
-                        <div class="project-number">
-                           
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div>
-
-                                <div class="project-category">
-                                    VIDEO / EDITING
-                                </div>
-
-                                <div class="project-title">
-                                    MODEL SHOOT
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- =============================================
-                         PROJECT 003 — BRAND SHOOT
-                    ============================================== -->
-
-                    <a
-                        href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project reveal"
-                    >
-
-                        <video
-                            src="NEWUPLOAD.mp4"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        ></video>
-
-
-                        <div class="project-number">
-                            
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div>
-
-                                <div class="project-category">
-                                    VIDEO / EDITING
-                                </div>
-
-                                <div class="project-title">
-                                    BRAND SHOOT
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- =============================================
-                         PROJECT 004 — GRAPHIC DESIGNING
-                    ============================================== -->
-
-                    <a
-                        href="#"
-                        class="project reveal"
-                    >
-
-                        <img
-                            src="project4.jpg"
-                            alt="Graphic Designing Project"
-                        >
-
-
-                        <div class="project-number">
-                            
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div>
-
-                                <div class="project-category">
-                                    DESIGNING
-                                </div>
-
-                                <div class="project-title">
-                                    GRAPHIC DESIGNING
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- =============================================
-                         PROJECT 005 — PROJECT FIVE
-                    ============================================== -->
-
-                    <a
-                        href="#"
-                        class="project reveal"
-                    >
-
-                        <img
-                            src="UPDATION POSTERR.jpg"
-                            alt="Project Five"
-                        >
-
-
-                        <div class="project-number">
-                           
-                        </div>
-
-
-                        <div class="project-info">
-
-                            <div>
-
-                                <div class="project-category">
-                                    CREATIVE
-                                </div>
-
-                                <div class="project-title">
-                                    PROJECT FIVE
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-arrow">
-                                ↗
-                            </div>
-
-                        </div>
-
-                    </a>
-
-
                 </div>
 
             </div>
-
-        </section>
-
-
-        <!-- =================================================
-             MARQUEE
-        ================================================== -->
-
-        <div class="marquee">
-
-            <div class="marquee-track">
-
-                <div class="marquee-item">
-
-                    CREATE
-                    <span>•</span>
-
-                    EDIT
-                    <span>•</span>
-
-                    DESIGN
-                    <span>•</span>
-
-                    CREATE
-                    <span>•</span>
-
-                    EDIT
-                    <span>•</span>
-
-                    DESIGN
-                    <span>•</span>
-
-                </div>
-
-
-                <div class="marquee-item">
-
-                    CREATE
-                    <span>•</span>
-
-                    EDIT
-                    <span>•</span>
-
-                    DESIGN
-                    <span>•</span>
-
-                    CREATE
-                    <span>•</span>
-
-                    EDIT
-                    <span>•</span>
-
-                    DESIGN
-                    <span>•</span>
-
-                </div>
-
-            </div>
-
         </div>
+    </section>
 
+    <!-- SOCIALS -->
+    <section id="socials">
+        <div class="container">
 
-        <!-- =================================================
-             ABOUT
-        ================================================== -->
-
-        <section id="about">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <div class="section-number">
-                            02 / ABOUT
-                        </div>
-
-                        <h2 class="section-title">
-                            WHO.
-                        </h2>
-
-                    </div>
-
+            <div class="section-head reveal">
+                <div>
+                    <div class="section-number">03 / SOCIALS</div>
+                    <h2 class="section-title">FIND ME.</h2>
                 </div>
 
-
-                <div class="about-layout reveal">
-
-                    <div>
-
-                        <h3 class="about-big">
-
-                            IDEAS ARE
-
-                            <span>
-                                CHEAP.
-                            </span>
-
-                            <br>
-
-                            EXECUTION
-
-                            <span>
-                                ISN'T.
-                            </span>
-
-                        </h3>
-
-                    </div>
-
-
-                    <div>
-
-                        <p class="about-text">
-
-                            Z6IH. is a personal creative
-                            portfolio focused on making
-                            digital content that grabs
-                            attention.
-
-                            <br><br>
-
-                            From video editing and motion
-                            graphics to visual design and
-                            experimental content, this is
-                            where ideas become visuals.
-
-                            <br><br>
-
-                            The goal is simple:
-
-                            <br>
-
-                            Make something people remember.
-
-                        </p>
-
-
-                        <div class="skills">
-
-                            <div class="skill">
-                                VIDEO EDITING
-                            </div>
-
-                            <div class="skill">
-                                MOTION DESIGN
-                            </div>
-
-                            <div class="skill">
-                                GRAPHIC DESIGN
-                            </div>
-
-                            <div class="skill">
-                                VFX
-                            </div>
-
-                            <div class="skill">
-                                3D
-                            </div>
-
-                            <div class="skill">
-                                CREATIVE CONTENT
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+                <p class="section-description">
+                    Follow my work and latest creative projects
+                    across my social platforms.
+                </p>
             </div>
 
-        </section>
+            <div class="socials">
 
-
-        <!-- =================================================
-             SOCIALS
-        ================================================== -->
-
-        <section id="socials">
-
-            <div class="container">
-
-                <div class="section-head reveal">
-
-                    <div>
-
-                        <div class="section-number">
-                            03 / SOCIALS
-                        </div>
-
-                        <h2 class="section-title">
-                            FIND ME.
-                        </h2>
-
+                <a href="#" class="social reveal">
+                    <div class="social-top">
+                        <div class="social-icon">IG</div>
+                        <div class="social-number">01 / SOCIAL</div>
                     </div>
+                    <div>
+                        <div class="social-name">Instagram</div>
+                        <div class="social-handle">@Z6IH</div>
+                    </div>
+                    <div class="social-arrow">↗</div>
+                </a>
 
+                <a href="#" class="social reveal">
+                    <div class="social-top">
+                        <div class="social-icon">YT</div>
+                        <div class="social-number">02 / SOCIAL</div>
+                    </div>
+                    <div>
+                        <div class="social-name">YouTube</div>
+                        <div class="social-handle">@YOUR_YOUTUBE</div>
+                    </div>
+                    <div class="social-arrow">↗</div>
+                </a>
 
-                    <p class="section-description">
+                <a href="#" class="social reveal">
+                    <div class="social-top">
+                        <div class="social-icon">TG</div>
+                        <div class="social-number">03 / SOCIAL</div>
+                    </div>
+                    <div>
+                        <div class="social-name">Telegram</div>
+                        <div class="social-handle">@Z6IH</div>
+                    </div>
+                    <div class="social-arrow">↗</div>
+                </a>
 
-                        Follow my work and latest
-                        creative projects across
-                        my social platforms.
+            </div>
+        </div>
+    </section>
 
-                    </p>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
 
-                </div>
+            <div class="contact">
+                <div class="contact-content">
 
+                    <div class="contact-label">HAVE A PROJECT?</div>
 
-                <div class="socials">
+                    <h2 class="contact-title">
+                        LET'S<br>
+                        <span>TALK.</span>
+                    </h2>
 
-
-                    <!-- INSTAGRAM -->
-
-                    <a
-                        href="https://instagram.com/YOUR_INSTAGRAM"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social reveal"
-                    >
-
-                        <div class="social-top">
-
-                            <div class="social-icon">
-                                IG
-                            </div>
-
-                            <div class="social-number">
-                                
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <div class="social-name">
-                                Instagram
-                            </div>
-
-                            <div class="social-handle">
-                                @YOUR_INSTAGRAM
-                            </div>
-
-                        </div>
-
-
-                        <div class="social-arrow">
-                            ↗
-                        </div>
-
-                    </a>
-
-
-                    <!-- YOUTUBE -->
-
-                    <a
-                        href="https://youtube.com/@YOUR_YOUTUBE"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social reveal"
-                    >
-
-                        <div class="social-top">
-
-                            <div class="social-icon">
-                                YT
-                            </div>
-
-                            <div class="social-number">
-                                
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <div class="social-name">
-                                YouTube
-                            </div>
-
-                            <div class="social-handle">
-                                @YOUR_YOUTUBE
-                            </div>
-
-                        </div>
-
-
-                        <div class="social-arrow">
-                            ↗
-                        </div>
-
-                    </a>
-
-
-                    <!-- TELEGRAM -->
-
-                    <a
-                        href="https://t.me/YOUR_TELEGRAM"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social reveal"
-                    >
-
-                        <div class="social-top">
-
-                            <div class="social-icon">
-                                TG
-                            </div>
-
-                            <div class="social-number">
-                              
-                            </div>
-
-                        </div>
-
-
-                        <div>
-
-                            <div class="social-name">
-                                Telegram
-                            </div>
-
-                            <div class="social-handle">
-                                @YOUR_TELEGRAM
-                            </div>
-
-                        </div>
-
-
-                        <div class="social-arrow">
-                            ↗
-                        </div>
-
+                    <a href="mailto:YOUR_EMAIL@example.com" class="email">
+                        YOUR_EMAIL@example.com →
                     </a>
 
                 </div>
-
             </div>
 
-        </section>
-
-
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
-
-        <section id="contact">
-
-            <div class="container">
-
-                <div class="contact">
-
-                    <div class="contact-content">
-
-                        <div class="contact-label">
-                            HAVE A PROJECT?
-                        </div>
-
-
-                        <h2 class="contact-title">
-
-                            LET'S
-
-                            <br>
-
-                            <span>
-                                TALK.
-                            </span>
-
-                        </h2>
-
-
-                        <a
-                            href="mailto:YOUR_EMAIL@example.com"
-                            class="email"
-                        >
-                            YOUR_EMAIL@example.com →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="footer-logo">
-            Z6IH<span>.</span>
         </div>
+    </section>
 
+</main>
 
-        <div class="footer-year">
-            © 2026 Z6IH. ALL RIGHTS RESERVED.
-        </div>
+<!-- FOOTER -->
+<footer>
 
+    <div class="footer-logo">Z6IH<span>.</span></div>
 
-        <div>
-            BUILT FOR CREATORS.
-        </div>
+    <div class="footer-year">
+        © 2026 Z6IH. ALL RIGHTS RESERVED.
+    </div>
 
-    </footer>
+    <div>BUILT FOR CREATORS.</div>
 
+</footer>
 
 </body>
-
 </html>
-```
